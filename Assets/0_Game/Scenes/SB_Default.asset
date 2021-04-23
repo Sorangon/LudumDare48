@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 764df11cc1116f040babcf4f0a7ff5ab, type: 3}
-  m_Name: NewSceneBundle
+  m_Name: SB_Default
   m_EditorClassIdentifier: 
-  scenes: []
+  scenes:
+  - Default
   description: 
-  sceneAssets: []
+  sceneAssets:
+  - {fileID: 102900000, guid: 5ab1cecd3a59be44baccd3a7f6f9bd1b, type: 3}

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: SCNLST_Main
   m_EditorClassIdentifier: 
   persistantScenesBundle: {fileID: 0}
-  scenesBundles: []
+  scenesBundles:
+  - {fileID: 11400000, guid: a5b987c9effbe284f9f9b52a9899374e, type: 2}

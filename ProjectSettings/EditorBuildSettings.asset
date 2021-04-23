@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/SorangonToolset/EnhancedSceneManager/Runtime/Resources/StartupScene.unity
+    guid: 2b57a3c6e893f3a43af1ec888389aa07
+  - enabled: 1
+    path: Assets/0_Game/Scenes/Default.unity
+    guid: 5ab1cecd3a59be44baccd3a7f6f9bd1b
   m_configObjects: {}
