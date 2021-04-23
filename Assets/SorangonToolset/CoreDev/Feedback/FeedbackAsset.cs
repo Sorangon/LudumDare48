@@ -3,7 +3,7 @@
     using NaughtyAttributes;
     using UnityEngine;
 
-    [CreateAssetMenu(fileName = "FB_", menuName = "Top Down Shooter/Effects/Feedback", order = 0)]
+    [CreateAssetMenu(fileName = "FB_", menuName = "Effects/Feedback", order = 0)]
     public class FeedbackAsset : ScriptableObject {
         #region Constants
         private const int BasePoolSize = 40;

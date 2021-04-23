@@ -2,7 +2,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-[CreateAssetMenu(fileName = "SC_", menuName = "Top Down Shooter/Effects/Tweening/Screen Shake")]
+[CreateAssetMenu(fileName = "SC_", menuName = "Effects/Tweening/Screen Shake")]
 public class CameraShake : ScriptableObject {
     #region Settings
     [SerializeField, Min(0f)] private float duration = 0.5f;
