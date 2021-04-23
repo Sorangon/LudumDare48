@@ -42,7 +42,7 @@
         #region Init
         [RuntimeInitializeOnLoadMethod]
         private static void OnInit() {
-            feedbackPrefab = (Resources.Load("TopDownShooter/Feedback") as GameObject).GetComponent<Feedback>();
+            feedbackPrefab = (Resources.Load("CoreDev/Feedback") as GameObject).GetComponent<Feedback>();
         }
         #endregion
 

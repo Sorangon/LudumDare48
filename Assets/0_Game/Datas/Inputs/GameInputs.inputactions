@@ -3,13 +3,29 @@
     "maps": [
         {
             "name": "Game",
-            "id": "e571dfea-0a1c-4ea2-b7e3-c5442b66cfea",
+            "id": "99d90ac1-9586-4204-9f2e-559ad509efc0",
             "actions": [
                 {
-                    "name": "Shoot",
+                    "name": "Action",
                     "type": "Button",
-                    "id": "189e3709-4402-4fd4-9c7d-4489ebae9b3a",
+                    "id": "1550459f-5b61-4883-80d2-d0a6dbffe5e2",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "602ff692-9692-4554-8d2d-7308f0ebcfd1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Pointer",
+                    "type": "Value",
+                    "id": "9c4f8cd5-90d4-4d3b-9f4b-6feb9249d6c8",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 }
@@ -17,12 +33,78 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "e3719244-dfec-4bef-9af1-da99094f51d2",
-                    "path": "",
+                    "id": "9f9f1f59-c62f-4dcf-a77c-e7be18500586",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "WASD",
+                    "id": "6dfa6c03-9de8-453e-9192-c9ae25496bbd",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Up",
+                    "id": "897f5514-76e3-4274-8631-1b3c8b509aeb",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "711b9562-c82b-4963-b095-99cb3a5eaf25",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "99a32598-e201-476d-ac28-0452749ad048",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "f1f5b7a6-2335-4da4-820d-e34f47db3190",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2236ac69-00d0-4a6c-89e0-1d75deede842",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pointer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
