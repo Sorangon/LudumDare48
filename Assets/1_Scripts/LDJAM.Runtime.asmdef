@@ -1,0 +1,18 @@
+{
+    "name": "LDJAM.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:048a2a3fb3674ee4a9812600b9fb9ba7",
+        "GUID:80ecf50dce984bb429cc6eacdd87932d",
+        "GUID:a76d6841eeffdc9409ad8263ce3f1491"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

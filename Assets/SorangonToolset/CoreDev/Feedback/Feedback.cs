@@ -1,6 +1,6 @@
-﻿namespace TopDownShooter.Effects {
+﻿namespace CoreDev.Effects {
     using UnityEngine;
-    using TopDownShooter.Utility;
+    using CoreDev.Utility;
 
     public class Feedback : MonoBehaviour {
         #region References

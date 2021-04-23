@@ -1,4 +1,4 @@
-﻿namespace TopDownShooter.Effects {
+﻿namespace CoreDev.Effects {
     using System.Collections.Generic;
     using NaughtyAttributes;
     using UnityEngine;

@@ -1,4 +1,4 @@
-﻿namespace TopDownShooter.Utility {
+﻿namespace CoreDev.Utility {
     using UnityEngine;
 
     public class CameraYRelative : MonoBehaviour {
