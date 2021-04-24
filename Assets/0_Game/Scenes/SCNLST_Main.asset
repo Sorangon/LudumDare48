@@ -15,3 +15,4 @@ MonoBehaviour:
   persistantScenesBundle: {fileID: 11400000, guid: 7e970ac1936e1d3428f6b03829cfdf8d, type: 2}
   scenesBundles:
   - {fileID: 11400000, guid: b7cbd79d88e4d6246adbe899dc3f45ed, type: 2}
+  - {fileID: 11400000, guid: f6781f98226f8184fb19d2716c2bd8ac, type: 2}

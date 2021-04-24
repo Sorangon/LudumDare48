@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3910457957841492798}
   - component: {fileID: 5592263016786211626}
   - component: {fileID: 7469405071023519633}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PF_UI_LoadingPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

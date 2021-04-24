@@ -20,7 +20,7 @@ public class GameSession {
     }
 
     public void Update() {
-
+        currentGameTime += Time.deltaTime;
     }
     #endregion
 }
