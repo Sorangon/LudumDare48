@@ -31,8 +31,16 @@ public class CeilCollapse : MonoBehaviour {
     private float GetSpeed() {
         float nearSpeed = Mathf.Lerp(nearCollapseSpeedMinMax.x, nearCollapseSpeedMinMax.y, difficultyModulator.DifficultyAmount);
         float farSpeed = Mathf.Lerp(nearCollapseSpeedMinMax.x, nearCollapseSpeedMinMax.y, difficultyModulator.DifficultyAmount);
-        float targetDistance = transform.position.y - targetPos.position.y;
-        return Mathf.Lerp(nearSpeed, farSpeed, modulationCurve.Evaluate(targetDistance / modulationDistance));
+        return Mathf.Lerp(nearSpeed, farSpeed, modulationCurve.Evaluate(GetDistanceRatio()));
+    }
+
+    private float GetDistanceRatio() {
+        return (transform.position.y - targetPos.position.y) / modulationDistance;
+    }
+    #endregion
+
+    #region Debug
+    private void OnDrawGizmosSelected() {
     }
     #endregion
 }
