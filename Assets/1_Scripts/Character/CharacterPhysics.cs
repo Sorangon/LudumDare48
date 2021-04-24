@@ -1,7 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D)), DefaultExecutionOrder(200)]
+[RequireComponent(typeof(Rigidbody2D)), DefaultExecutionOrder(-200)]
 public class CharacterPhysics : MonoBehaviour {
     #region Settings
     [Header("Gravity")]
@@ -22,10 +22,14 @@ public class CharacterPhysics : MonoBehaviour {
 
     #region Callbacks
     private void FixedUpdate() {
+        contactsCount = rigidbody.GetContacts(contacts);
+
         rigidbody.velocity = Vector2.zero;
         ComputeGravity();
+        Debug.Log("Movement vel : " + movementVelocity);
+        persistantVelocity *= (1f - GetContactsResistance(persistantVelocity.normalized));
         rigidbody.velocity += persistantVelocity + movementVelocity;
-        contactsCount = 0;
+
         movementVelocity = Vector2.zero;
     }
     #endregion
@@ -39,12 +43,12 @@ public class CharacterPhysics : MonoBehaviour {
     }
 
     public void Move(Vector2 direction) {
-        movementVelocity += direction;
+        movementVelocity += direction * (1f - GetContactsResistance(direction.normalized));
     }
 
     private void ComputeGravity() {
         if(persistantVelocity.y <= 0f) {
-            persistantVelocity.y = (persistantVelocity.y + fallGravityForce * Time.fixedDeltaTime) * (1 - GetContactsResistance(Vector2.down));
+            persistantVelocity.y = (persistantVelocity.y + fallGravityForce * Time.fixedDeltaTime);
             if(persistantVelocity.y <= maxGravity) {
                 persistantVelocity.y = maxGravity;
             }
@@ -56,23 +60,15 @@ public class CharacterPhysics : MonoBehaviour {
 
     #region Physics Infos
     public float GetContactsResistance(Vector2 direction) {
-        float resistance;
+        float resistance = 0f;
         if(contactsCount != 0f) {
-            resistance = 1f;
-            for (int i = 0; i < contactsCount; i++) {
-                resistance *= Vector2.Dot(contacts[i].normal, -direction);
-            }
-        } else {
             resistance = 0f;
+            for (int i = 0; i < contactsCount; i++) {
+                resistance = Mathf.Max(Vector2.Dot(contacts[i].normal, -direction), resistance);
+            }
         }
 
         return resistance;
-    }
-    #endregion
-
-    #region Physics Callbacks
-    private void OnCollisionStay2D(Collision2D collision) {
-        contactsCount = collision.GetContacts(contacts);
     }
     #endregion
 
