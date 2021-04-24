@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 8251496915035333541}
   - component: {fileID: 7266342410427268881}
   - component: {fileID: 6939197163824059280}
+  - component: {fileID: 5076140560825979120}
   m_Layer: 6
   m_Name: PF_Character
   m_TagString: Untagged
@@ -414,6 +415,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &5076140560825979120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626190035934663030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78447fda0b549d459c4563c40acdd0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  invicible: 0
+  deathBehaviour: {fileID: 11400000, guid: 1ca48525c48f10d4c8a05cfa6bcc51f8, type: 2}
+  deathBehaviourParameter: {fileID: 0}
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  onTakeDamages:
+    m_PersistentCalls:
+      m_Calls: []
+  onAddMaxHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8097859097450784085
 GameObject:
   m_ObjectHideFlags: 0

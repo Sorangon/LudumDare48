@@ -2,6 +2,8 @@ using CoreDev.Utility;
 using UnityEngine;
 
 public class DestroyOutOfView : MonoBehaviour {
+    //public float toleranceDistance = 0f;
+
     void LateUpdate() {
         Camera cam = MainCameraBuffer.Get();
         Vector2 screenPos = cam.WorldToScreenPoint(transform.position);
