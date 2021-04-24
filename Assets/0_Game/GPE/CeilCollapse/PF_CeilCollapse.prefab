@@ -45,29 +45,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbacc19ee5b412d4b854c0d931cf1556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nearCollapseSpeedMinMax: {x: 1, y: 3}
+  nearCollapseSpeedMinMax: {x: 0.5, y: 3}
   farCollapseSpeedMinMax: {x: 5, y: 10}
-  modulationDistance: 5
+  modulationDistance: 15
   modulationCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
+      value: -0.0032958984
+      inSlope: 0.009282235
+      outSlope: 0.009282235
       tangentMode: 0
-      weightedMode: 0
+      weightedMode: 3
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.36637494
+    - serializedVersion: 3
+      time: 0.3244293
+      value: 0.24928862
+      inSlope: 0.1387112
+      outSlope: 0.1387112
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.30149263
+      outWeight: 0.39300296
+    - serializedVersion: 3
+      time: 0.62355155
+      value: 0.29549146
+      inSlope: 0.534379
+      outSlope: 0.534379
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.27763468
+      outWeight: 0.8274926
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 0
+      inSlope: -0.09914613
+      outSlope: -0.09914613
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
+      weightedMode: 1
+      inWeight: 0.47448146
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
