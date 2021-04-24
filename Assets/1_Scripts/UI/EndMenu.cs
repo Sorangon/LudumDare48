@@ -39,6 +39,7 @@ public class EndMenu : MonoBehaviour {
         if (isDisplayingMenu) {
             HideEndMenu();
             StartCoroutine(Reload());
+
         }
     }
 

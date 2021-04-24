@@ -373,9 +373,9 @@ MonoBehaviour:
   airMovementAcceleration: 0.2
   groundMovementDeceleration: 0.1
   airMovementDeceleration: 0.5
-  jumpForce: 13
+  jumpForce: 12
   airJumpsCount: 1
-  airJumpForce: 10
+  airJumpForce: 9
   isGroundedAngleThreshold: 10
   leaveGroundDelay: 0.12
   characterPhysics: {fileID: 7266342410427268881}

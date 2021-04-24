@@ -28,6 +28,10 @@ public class GameManager : ScriptableObject {
     #endregion
 
     #region Game
+    public void ResetGameState() {
+        scoreManager.ResetScore();
+    }
+
     public void StartGame() {
         currentSession = new GameSession(scoreManager);
         currentSession.Start();
