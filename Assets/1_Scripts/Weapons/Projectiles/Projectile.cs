@@ -9,9 +9,8 @@ public class Projectile : MonoBehaviour {
     #region Physic Callbacks
     private void OnTriggerEnter2D(Collider2D collision) {
         //Check collision with damageable object
-        GameObject rootGo = collision.attachedRigidbody != null ? collision.attachedRigidbody.gameObject : collision.gameObject;
-        if (rootGo.TryGetComponent(out Health health)) {
-            health.InflictDamages(damages);
+        if(collision.TryGetHealthSystem(out Health healthSystem)) {
+            healthSystem.InflictDamages(damages);
         }
 
         Destroy(gameObject);

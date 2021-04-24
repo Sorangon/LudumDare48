@@ -21,7 +21,7 @@ public class VerticalThresholdCamera : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        if (ReferenceEquals(followTarget, null)) return;
+        if (followTarget == null) return;
 
         if (followTarget.transform.position.y <= targetHeight + heightThreshold) {
             targetHeight = followTarget.transform.position.y - heightThreshold;
