@@ -21,10 +21,11 @@ public class TileSpawner : MonoBehaviour
     [Button]
     public void GenerateTileChunk()
     {
-        ClearTileHolder();
+        //ClearTileHolder();
         LevelSpawner ls = FindObjectOfType<LevelSpawner>();
 
         globalHeight= ls.currentLine;
+        print("Current Line: " + globalHeight);
         //localHeight = 0;
 
 
@@ -38,16 +39,14 @@ public class TileSpawner : MonoBehaviour
 
                     if (rng < fillPercent)
                     {
-                        CreateTilePrefab(i, globalHeight + chunkHeight);
+                        CreateTilePrefab(i, globalHeight + chunkHeight + n);
                     }
                 }
                 else
                 {
-                    CreateTilePrefab(i, globalHeight + chunkHeight);
+                    CreateTilePrefab(i, globalHeight + chunkHeight + n);
                 }
             }
-
-            chunkHeight++;
         }
     }
 

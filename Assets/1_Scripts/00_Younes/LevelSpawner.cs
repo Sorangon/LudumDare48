@@ -26,9 +26,10 @@ public class LevelSpawner : MonoBehaviour
         ClearLevel();
         currentLine = 0;
 
-        for (int i = currentLine; i < maxLines; i+= chunkDistance)
+        for (int i = currentLine; i <= maxLines; i+= chunkDistance)
 		{
-            // ts.GenerateTileChunk();
+            ts.GenerateTileChunk();
+            print("Calling TS");
             currentLine += chunkDistance;
 		}
 	}
