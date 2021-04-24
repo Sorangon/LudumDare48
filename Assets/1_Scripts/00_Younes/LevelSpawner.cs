@@ -4,20 +4,20 @@ using UnityEngine;
 using NaughtyAttributes;
 public class LevelSpawner : MonoBehaviour
 {
-    [SerializeField] Grid2D grid;
-    //Maybe add different TileSpawner with different parameters / tiles prefabs for scaling difficulty
-    [SerializeField] TileSpawner ts;
+	#region Fields
+	[Header ("References")]
+    public Grid2D grid;
+    public TileSpawner ts;
 
     [Header ("Basic Generation Rules")]
     public int currentLine = 0;
     public int maxLines = 500;
-    public int chunkDistance = 20;
+    public int distanceBetweenChunks = 20;
 
-    void Start()
+	#endregion
+	void Start()
     {
-        grid = GetComponent<Grid2D>();
-        ts = GetComponent<TileSpawner>();
-        currentLine = 0;
+        GenerateLevel();
     }
 
     [Button] 
@@ -26,11 +26,11 @@ public class LevelSpawner : MonoBehaviour
         ClearLevel();
         currentLine = 0;
 
-        for (int i = currentLine; i <= maxLines; i+= chunkDistance)
+        for (int lineIndex = 0; lineIndex <= maxLines; lineIndex+= distanceBetweenChunks)
 		{
+            currentLine = lineIndex;
+            print("Current line = " + lineIndex);
             ts.GenerateTileChunk();
-            print("Calling TS");
-            currentLine += chunkDistance;
 		}
 	}
     
