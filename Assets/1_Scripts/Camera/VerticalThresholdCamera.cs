@@ -8,7 +8,7 @@ public class VerticalThresholdCamera : MonoBehaviour {
     public float maxDistance = 5f;
 
     [Header("References")]
-    public Transform followTarget = null;
+    public PositionVariable target = null;
     #endregion
 
     #region Currents
@@ -21,10 +21,10 @@ public class VerticalThresholdCamera : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        if (followTarget == null) return;
+        if (target == null) return;
 
-        if (followTarget.transform.position.y <= targetHeight + heightThreshold) {
-            targetHeight = followTarget.transform.position.y - heightThreshold;
+        if (target.position.y <= targetHeight + heightThreshold) {
+            targetHeight = target.position.y - heightThreshold;
         }
 
         Vector3 targetPos = new Vector3(transform.position.x, targetHeight, transform.position.z);
@@ -49,8 +49,8 @@ public class VerticalThresholdCamera : MonoBehaviour {
             Gizmos.color = Color.yellow;
             DrawVerticalLine(targetHeight + heightThreshold);
 
-            if (followTarget != null) {
-                Gizmos.DrawSphere(followTarget.position, 0.2f);
+            if (target != null) {
+                Gizmos.DrawSphere(target.position, 0.2f);
             }
         }
     }

@@ -146,4 +146,4 @@ MonoBehaviour:
   damping: 0.3
   heightThreshold: -2.5
   maxDistance: 5
-  followTarget: {fileID: 0}
+  target: {fileID: 11400000, guid: 9fc05a68105e4f345a5deadcfa223c15, type: 2}

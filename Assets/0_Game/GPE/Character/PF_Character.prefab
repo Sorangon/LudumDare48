@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 7266342410427268881}
   - component: {fileID: 6939197163824059280}
   - component: {fileID: 5076140560825979120}
+  - component: {fileID: 5846566612895229054}
   m_Layer: 6
   m_Name: PF_Character
   m_TagString: Untagged
@@ -443,6 +444,19 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5846566612895229054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626190035934663030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba629c4b2d19c0048ade3a303a168b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionVariable: {fileID: 11400000, guid: 9fc05a68105e4f345a5deadcfa223c15, type: 2}
 --- !u!1 &8097859097450784085
 GameObject:
   m_ObjectHideFlags: 0
