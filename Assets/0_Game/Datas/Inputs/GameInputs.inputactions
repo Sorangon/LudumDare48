@@ -6,7 +6,7 @@
             "id": "99d90ac1-9586-4204-9f2e-559ad509efc0",
             "actions": [
                 {
-                    "name": "Action",
+                    "name": "Jump",
                     "type": "Button",
                     "id": "1550459f-5b61-4883-80d2-d0a6dbffe5e2",
                     "expectedControlType": "Button",
@@ -38,7 +38,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Action",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

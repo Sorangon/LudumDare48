@@ -1,12 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D)), DefaultExecutionOrder(200)]
 public class CharacterPhysics : MonoBehaviour {
     #region Settings
     [Header("Gravity")]
-    public float gravityForce = -9.81f;
+    public float resistanceGravityForce = -10f;
+    public float fallGravityForce = -9.81f;
     public float maxGravity = -30f;
 
     [Header("References")]
@@ -14,7 +14,8 @@ public class CharacterPhysics : MonoBehaviour {
     #endregion
 
     #region Currents
-    private float currentGravity = 0f;
+    private Vector2 movementVelocity = Vector2.zero;
+    private Vector2 persistantVelocity = Vector2.zero;
     private ContactPoint2D[] contacts = new ContactPoint2D[10];
     private int contactsCount = 0;
     #endregion
@@ -23,32 +24,43 @@ public class CharacterPhysics : MonoBehaviour {
     private void FixedUpdate() {
         rigidbody.velocity = Vector2.zero;
         ComputeGravity();
+        rigidbody.velocity += persistantVelocity + movementVelocity;
         contactsCount = 0;
+        movementVelocity = Vector2.zero;
     }
     #endregion
 
-    public void Move(Vector2 direction) {
-        rigidbody.velocity += direction;
-    }
-
     #region Process Physics
-    private void ComputeGravity() {
-        currentGravity = (currentGravity + gravityForce * Time.fixedDeltaTime) * GetContactsResistance(Vector2.down);
-        if(currentGravity <= maxGravity) {
-            currentGravity = maxGravity;
-        }
-        rigidbody.velocity += Vector2.up * currentGravity;
+    public void AddForce(Vector2 force) {
+        persistantVelocity += force;
     }
 
-    private float GetContactsResistance(Vector2 direction) {
+    public void Move(Vector2 direction) {
+        movementVelocity += direction;
+    }
+
+    private void ComputeGravity() {
+        if(persistantVelocity.y <= 0f) {
+            persistantVelocity.y = (persistantVelocity.y + fallGravityForce * Time.fixedDeltaTime) * (1 - GetContactsResistance(Vector2.down));
+            if(persistantVelocity.y <= maxGravity) {
+                persistantVelocity.y = maxGravity;
+            }
+        } else {
+            persistantVelocity.y = (persistantVelocity.y + resistanceGravityForce * Time.fixedDeltaTime);
+        }
+    }
+    #endregion
+
+    #region Physics Infos
+    public float GetContactsResistance(Vector2 direction) {
         float resistance;
         if(contactsCount != 0f) {
             resistance = 1f;
             for (int i = 0; i < contactsCount; i++) {
-                resistance *= 1f - Vector2.Dot(contacts[i].normal, -direction);
+                resistance *= Vector2.Dot(contacts[i].normal, -direction);
             }
         } else {
-            resistance = 1f;
+            resistance = 0f;
         }
 
         return resistance;
@@ -65,6 +77,10 @@ public class CharacterPhysics : MonoBehaviour {
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, rigidbody.velocity);
+        Gizmos.color = Color.red;
+        for (int i = 0; i < contactsCount; i++) {
+            Gizmos.DrawRay(contacts[i].point, contacts[i].normal);
+        }
     }
     #endregion
 }

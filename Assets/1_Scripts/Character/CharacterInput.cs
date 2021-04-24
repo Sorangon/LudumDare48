@@ -13,5 +13,11 @@ public class CharacterInput : MonoBehaviour {
     public void MoveAction(InputAction.CallbackContext callbackContext) {
         controller.SetMovementDirection(callbackContext.ReadValue<float>());
     }
+
+    public void JumpAction(InputAction.CallbackContext callbackContext) {
+        if(callbackContext.action.phase == InputActionPhase.Performed) {
+            controller.Jump();
+        }
+    }
     #endregion
 }
