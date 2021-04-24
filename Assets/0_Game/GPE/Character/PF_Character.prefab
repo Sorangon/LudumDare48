@@ -150,7 +150,19 @@ MonoBehaviour:
     m_ActionId: 1550459f-5b61-4883-80d2-d0a6dbffe5e2
     m_ActionName: Game/Action[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5008376446935279475}
+        m_TargetAssemblyTypeName: CharacterInput, LDJAM.Runtime
+        m_MethodName: MoveAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 602ff692-9692-4554-8d2d-7308f0ebcfd1
     m_ActionName: Game/Move[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
@@ -187,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d412b7b4f9fc3c74fa2fed87bd86406a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 8
   characterPhysics: {fileID: 7266342410427268881}
 --- !u!114 &7266342410427268881
 MonoBehaviour:
@@ -200,6 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182b5bb710b494f418055f7d2a326089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityForce: -9.81
+  maxGravity: -30
   rigidbody: {fileID: 6939197163824059280}
 --- !u!50 &6939197163824059280
 Rigidbody2D:
@@ -216,12 +231,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &8097859097450784085
 GameObject:
   m_ObjectHideFlags: 0
