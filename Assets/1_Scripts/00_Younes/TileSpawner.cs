@@ -8,7 +8,7 @@ public class TileSpawner : MonoBehaviour
     [SerializeField] GameObject tilePrefab;
     [SerializeField] GameObject wallPrefab;
     [SerializeField] Grid2D grid2D;
-    [SerializeField] Transform tileHolder;
+    //[SerializeField] Transform tileHolder;
 
     [Header("Debug")]
     public int globalHeight;
@@ -17,15 +17,17 @@ public class TileSpawner : MonoBehaviour
     public int chunkHeight;
     public bool fillLines = false;
     [Range(0, 100)] public int fillPercent;
-    [Range(0, 100)] public int wallPercent;
+    [Range(0, 80)] public int wallPercent;
 
     [Button]
     public void GenerateTileChunk()
     {
         LevelSpawner ls = FindObjectOfType<LevelSpawner>();
-       // Transform tileHolder = new GameObject().transform;
+        GameObject holder = new GameObject();
+        holder.transform.SetParent(this.transform);
 
         globalHeight= ls.currentLine;
+        holder.name = "Chunk " + (globalHeight / ls.distanceBetweenChunks);
 
         for (int n = 0; n < chunkHeight; n++)
         {
@@ -39,46 +41,46 @@ public class TileSpawner : MonoBehaviour
 
                     if (fillRng < fillPercent)
                     {
-                        if (wallRng < wallPercent)
+                        if (wallRng > wallPercent)
 						{
-                            CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n);
+                            CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n, holder.transform);
                         } else
 						{
-                            CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n);
+                            CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n, holder.transform);
 						}
                     }
                 }
                 else
                 {
-                    if (wallRng < wallPercent)
+                    if (wallRng > wallPercent)
                     {
-                        CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n);
+                        CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n, holder.transform);
                     }
                     else
                     {
-                        CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n);
+                        CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n, holder.transform);
                     }
                 }
             }
         }
     }
-    public void CreateTilePrefab(GameObject prefab, int x, int y)
+    public void CreateTilePrefab(GameObject prefab, int x, int y, Transform _parent)
 	{
         Vector3 pos = new Vector3(x, y, 0);
         GameObject tile = Instantiate(prefab, pos, Quaternion.identity);
-        tile.transform.SetParent(tileHolder);
+        tile.transform.SetParent(_parent);
     }
 
     [Button]
     public void ClearTileHolder()
 	{
-        int childs = tileHolder.childCount;
+        int childs = transform.childCount;
         for (int i = 0; i < childs; i++)
 		{
             if (Application.isEditor)
-                DestroyImmediate(tileHolder.GetChild(0).gameObject);
+                DestroyImmediate(transform.GetChild(0).gameObject);
             else
-                Destroy(tileHolder.GetChild(0).gameObject);
+                Destroy(transform.GetChild(0).gameObject);
         }
     }
 }

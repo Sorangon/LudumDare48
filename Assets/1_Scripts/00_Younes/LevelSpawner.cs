@@ -17,7 +17,7 @@ public class LevelSpawner : MonoBehaviour
 	#endregion
 	void Start()
     {
-        currentLine = 0;
+        GenerateLevel();
     }
 
     [Button] 
@@ -28,8 +28,9 @@ public class LevelSpawner : MonoBehaviour
 
         for (int lineIndex = 0; lineIndex <= maxLines; lineIndex+= distanceBetweenChunks)
 		{
+            currentLine = lineIndex;
+            print("Current line = " + lineIndex);
             ts.GenerateTileChunk();
-            currentLine += lineIndex;
 		}
 	}
     
