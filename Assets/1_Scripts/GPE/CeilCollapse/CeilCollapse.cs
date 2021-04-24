@@ -13,11 +13,33 @@ public class CeilCollapse : MonoBehaviour {
     [Header("References")]
     public DifficultyModulator difficultyModulator = null;
     public PositionVariable targetPos = null;
+    public GameManager gameManager = null;
+    #endregion
+
+    #region Currents
+    private bool isFalling = false;
     #endregion
 
     #region Callbacks
+    private void OnEnable() {
+        if (gameManager == null) {
+            isFalling = true;
+        } else {
+            gameManager.onStartGame += OnStartGame;
+            gameManager.onEndGame += OnEndGame;
+        }
+    }
+
     void FixedUpdate() {
+        if (!isFalling) return;
         transform.position += Vector3.down * GetSpeed() * Time.fixedDeltaTime;
+    }
+
+    private void OnDisable() {
+        if (gameManager != null) {
+            gameManager.onStartGame += OnStartGame;
+            gameManager.onEndGame += OnEndGame;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -43,6 +65,16 @@ public class CeilCollapse : MonoBehaviour {
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.Lerp(Color.green, Color.red, modulationCurve.Evaluate(GetDistanceRatio()));
         Gizmos.DrawLine(transform.position, targetPos.position);
+    }
+    #endregion
+
+    #region Events
+    private void OnStartGame() {
+        isFalling = true;
+    }
+
+    private void OnEndGame() {
+        isFalling = false;
     }
     #endregion
 }

@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7336c654f69212946abe18e3975a093f, type: 3}
-  m_Name: SCNLST_Main
+  m_Script: {fileID: 11500000, guid: 764df11cc1116f040babcf4f0a7ff5ab, type: 3}
+  m_Name: SB_JulienProto
   m_EditorClassIdentifier: 
-  persistantScenesBundle: {fileID: 11400000, guid: 7e970ac1936e1d3428f6b03829cfdf8d, type: 2}
-  scenesBundles:
-  - {fileID: 11400000, guid: f6781f98226f8184fb19d2716c2bd8ac, type: 2}
+  scenes:
+  - SCN_JulienProto
+  description: 
+  sceneAssets:
+  - {fileID: 102900000, guid: 2cfc27817e9c81c4bad9e11903429be5, type: 3}
