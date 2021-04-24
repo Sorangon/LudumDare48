@@ -1,4 +1,4 @@
-using System.Collections;
+using NaughtyAttributes;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D)), DefaultExecutionOrder(200)]
@@ -17,7 +17,7 @@ public class CharacterPhysics : MonoBehaviour {
     private Vector2 movementVelocity = Vector2.zero;
     private Vector2 persistantVelocity = Vector2.zero;
     private ContactPoint2D[] contacts = new ContactPoint2D[10];
-    private int contactsCount = 0;
+    [ShowNonSerializedField] private int contactsCount = 0;
     #endregion
 
     #region Callbacks
@@ -31,7 +31,10 @@ public class CharacterPhysics : MonoBehaviour {
     #endregion
 
     #region Process Physics
-    public void AddForce(Vector2 force) {
+    public void AddForce(Vector2 force, bool resetVelocity) {
+        if (resetVelocity) {
+            persistantVelocity = Vector2.zero;
+        }
         persistantVelocity += force;
     }
 

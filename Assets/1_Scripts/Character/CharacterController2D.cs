@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using 
 
 [RequireComponent(typeof(CharacterPhysics)), SelectionBase]
 public class CharacterController2D : MonoBehaviour {
@@ -11,6 +10,8 @@ public class CharacterController2D : MonoBehaviour {
 
     [Header("Jump")]
     [Min(0f)] public float jumpForce = 10f;
+    [Min(0)] public int airJumpsCount = 1;
+    [Min(0f)] public float airJumpForce = 5f;
 
     [Header("Miscs")]
     [Range(0f, 90f)] public float isGroundedAngleThreshold = 10f;
@@ -23,6 +24,8 @@ public class CharacterController2D : MonoBehaviour {
     #region Currents
     private float isGroundedTimer = 0f;
     private float horizontalMovement = 0f;
+    private int remaningAirJumpCount = 0;
+    private bool requestJump = false;
     #endregion
 
     #region Callbacks
@@ -32,10 +35,25 @@ public class CharacterController2D : MonoBehaviour {
         float groundAngle = (characterPhysics.GetContactsResistance(Vector2.down)) * 90f;
         if (groundAngle > isGroundedAngleThreshold) {
             isGroundedTimer = leaveGroundDelay;
+            if(remaningAirJumpCount < airJumpsCount) {
+                remaningAirJumpCount = airJumpsCount;
+            }
         } else {
             if(isGroundedTimer > 0f) {
                 isGroundedTimer -= Time.fixedDeltaTime;
             }
+        }
+
+        if (requestJump) {
+            if (IsGrounded()) {
+                characterPhysics.AddForce(Vector2.up * jumpForce, true);
+            } else {
+                if(remaningAirJumpCount > 0) {
+                    characterPhysics.AddForce(Vector2.up * airJumpForce, true);
+                    remaningAirJumpCount--;
+                }
+            }
+            requestJump = false;
         }
     }
     #endregion
@@ -48,9 +66,7 @@ public class CharacterController2D : MonoBehaviour {
 
     #region Actions
     public void Jump() {
-        if (IsGrounded()) {
-            characterPhysics.AddForce(Vector2.up * jumpForce);
-        }
+        requestJump = true;
     }
     #endregion
 
