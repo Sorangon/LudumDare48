@@ -6,12 +6,13 @@ public class TileSpawner : MonoBehaviour
 {
     [SerializeField] GameObject tilePrefab;
 
+    [SerializeField] Grid2D grid2D;
+
     void Start()
     {
-        ²
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         
