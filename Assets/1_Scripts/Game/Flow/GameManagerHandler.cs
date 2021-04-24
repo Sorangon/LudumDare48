@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[DefaultExecutionOrder(-500)]
 public class GameManagerHandler : MonoBehaviour {
     #region Settings
     public GameManager gameManager = null;

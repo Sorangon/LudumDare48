@@ -39,4 +39,10 @@ public class GameManager : ScriptableObject {
         onEndGame?.Invoke();
     }
     #endregion
+
+    #region Application
+    public void QuitGame() {
+        Application.Quit();
+    }
+    #endregion
 }
