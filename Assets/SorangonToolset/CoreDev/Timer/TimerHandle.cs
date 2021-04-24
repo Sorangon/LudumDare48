@@ -6,6 +6,7 @@
     /// The timer updater system
     /// Must not be destroyed
     /// </summary>
+    [DefaultExecutionOrder(-500)]
     public class TimerHandle : MonoBehaviour {
         #region Currents
         private static TimerHandle instance = null;
@@ -19,23 +20,13 @@
         [RuntimeInitializeOnLoadMethod]
         private static void Init() {
             //Create timer handle on run application
-            GameObject go = new GameObject("Timer Handle", typeof(TimerHandle));
+            GameObject go = new GameObject("Timer Handle");
+            instance = go.AddComponent<TimerHandle>();
+            DontDestroyOnLoad(go);
         }
         #endregion
 
         #region Callbacks
-        private void OnEnable() {
-            if(instance == null) {
-                instance = this;
-                DontDestroyOnLoad(gameObject);
-            } else {
-                if(instance != this) {
-                    Destroy(gameObject);
-                    Debug.LogError("Only one Timer Handle can be created");
-                }
-            }
-        }
-
         private void Update() {
             UpdateTimers();
         }

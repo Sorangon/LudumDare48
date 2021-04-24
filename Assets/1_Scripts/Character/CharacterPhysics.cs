@@ -26,7 +26,6 @@ public class CharacterPhysics : MonoBehaviour {
 
         rigidbody.velocity = Vector2.zero;
         ComputeGravity();
-        Debug.Log("Movement vel : " + movementVelocity);
         persistantVelocity *= (1f - GetContactsResistance(persistantVelocity.normalized));
         rigidbody.velocity += persistantVelocity + movementVelocity;
 
