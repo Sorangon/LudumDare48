@@ -367,11 +367,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 8
+  groundMovementAcceleration: 0.1
+  airMovementAcceleration: 0.2
+  groundMovementDeceleration: 0.1
+  airMovementDeceleration: 0.5
   jumpForce: 13
   airJumpsCount: 1
   airJumpForce: 10
   isGroundedAngleThreshold: 10
-  leaveGroundDelay: 0.1
+  leaveGroundDelay: 0.12
   characterPhysics: {fileID: 7266342410427268881}
 --- !u!114 &7266342410427268881
 MonoBehaviour:

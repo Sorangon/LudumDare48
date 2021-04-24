@@ -7,6 +7,10 @@ public class CharacterController2D : MonoBehaviour {
     #region Settings
     [Header("Movement")]
     [Min(0f)] public float movementSpeed = 8f;
+    [Min(0f)] public float groundMovementAcceleration = 0.1f;
+    [Min(0f)] public float airMovementAcceleration = 0.3f;
+    [Min(0f)] public float groundMovementDeceleration = 0.05f;
+    [Min(0f)] public float airMovementDeceleration = 0.5f;
 
     [Header("Jump")]
     [Min(0f)] public float jumpForce = 10f;
@@ -23,14 +27,15 @@ public class CharacterController2D : MonoBehaviour {
 
     #region Currents
     private float isGroundedTimer = 0f;
-    private float horizontalMovement = 0f;
+    private float axisDirection = 0f;
+    private float currentHorizontalMovement = 0f;
     private int remaningAirJumpCount = 0;
     private bool requestJump = false;
     #endregion
 
     #region Callbacks
     private void FixedUpdate() {
-        characterPhysics.Move(Vector2.right * horizontalMovement);
+        ManageHorizontalMovements();
 
         float groundAngle = (characterPhysics.GetContactsResistance(Vector2.down)) * 90f;
         if (groundAngle > isGroundedAngleThreshold) {
@@ -60,7 +65,30 @@ public class CharacterController2D : MonoBehaviour {
 
     #region Movement
     public void SetMovementDirection(float axisDirection) {
-        horizontalMovement = axisDirection * movementSpeed;
+        this.axisDirection = axisDirection;
+    }
+
+    private void ManageHorizontalMovements() {
+        float absAxisDir = Mathf.Abs(axisDirection);
+
+        float lerpT;
+        if(absAxisDir > 0) {
+            if (IsGrounded()) {
+                lerpT = groundMovementAcceleration;
+            } else {
+                lerpT = airMovementAcceleration;
+            }
+        } else {
+            if (IsGrounded()) {
+                lerpT = groundMovementDeceleration;
+            } else {
+                lerpT = airMovementDeceleration;
+            }
+        }
+
+        currentHorizontalMovement = Mathf.Lerp(currentHorizontalMovement, axisDirection, Time.fixedDeltaTime / lerpT);
+
+        characterPhysics.Move(Vector2.right * currentHorizontalMovement * movementSpeed);
     }
     #endregion
 
