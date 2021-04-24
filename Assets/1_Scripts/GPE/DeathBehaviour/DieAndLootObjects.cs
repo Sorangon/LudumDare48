@@ -3,7 +3,7 @@
 /// <summary>
 /// Loot objects at position on death
 /// </summary>
-[CreateAssetMenu(fileName = "newLootObjects", menuName = "GameplayDeath Behaviours/Loot Objects", order = 0)]
+[CreateAssetMenu(fileName = "newLootObjects", menuName = "Gameplay/Death Behaviours/Loot Objects", order = 0)]
 public class DieAndLootObjects : DeathBehaviour {
     #region Settings
     [SerializeField] private float lootRadius = 1f;
