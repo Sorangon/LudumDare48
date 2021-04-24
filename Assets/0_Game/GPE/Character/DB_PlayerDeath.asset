@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc5166a9b9946848a18da5109ad5303, type: 3}
   m_Name: DB_PlayerDeath
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 11400000, guid: fe8153635d47e6e42959549944550816, type: 2}

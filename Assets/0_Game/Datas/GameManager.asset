@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7336c654f69212946abe18e3975a093f, type: 3}
-  m_Name: SCNLST_Main
+  m_Script: {fileID: 11500000, guid: 0dbd87313c4df5c4eb4c1e608d7b0b6b, type: 3}
+  m_Name: GameManager
   m_EditorClassIdentifier: 
-  persistantScenesBundle: {fileID: 11400000, guid: 7e970ac1936e1d3428f6b03829cfdf8d, type: 2}
-  scenesBundles:
-  - {fileID: 11400000, guid: f6781f98226f8184fb19d2716c2bd8ac, type: 2}
+  scoreManager: {fileID: 11400000, guid: e5ee021c9adf75d4ba3cdd2b793f05aa, type: 2}
