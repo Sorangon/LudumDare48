@@ -30,7 +30,7 @@ public class CeilCollapse : MonoBehaviour {
     #region Speed
     private float GetSpeed() {
         float nearSpeed = Mathf.Lerp(nearCollapseSpeedMinMax.x, nearCollapseSpeedMinMax.y, difficultyModulator.DifficultyAmount);
-        float farSpeed = Mathf.Lerp(nearCollapseSpeedMinMax.x, nearCollapseSpeedMinMax.y, difficultyModulator.DifficultyAmount);
+        float farSpeed = Mathf.Lerp(farCollapseSpeedMinMax.x, farCollapseSpeedMinMax.y, difficultyModulator.DifficultyAmount);
         return Mathf.Lerp(nearSpeed, farSpeed, modulationCurve.Evaluate(GetDistanceRatio()));
     }
 
@@ -41,6 +41,8 @@ public class CeilCollapse : MonoBehaviour {
 
     #region Debug
     private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.Lerp(Color.green, Color.red, modulationCurve.Evaluate(GetDistanceRatio()));
+        Gizmos.DrawLine(transform.position, targetPos.position);
     }
     #endregion
 }
