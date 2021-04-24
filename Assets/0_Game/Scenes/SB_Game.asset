@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7336c654f69212946abe18e3975a093f, type: 3}
-  m_Name: SCNLST_Main
+  m_Script: {fileID: 11500000, guid: 764df11cc1116f040babcf4f0a7ff5ab, type: 3}
+  m_Name: SB_Game
   m_EditorClassIdentifier: 
-  persistantScenesBundle: {fileID: 11400000, guid: 7e970ac1936e1d3428f6b03829cfdf8d, type: 2}
-  scenesBundles:
-  - {fileID: 11400000, guid: b7cbd79d88e4d6246adbe899dc3f45ed, type: 2}
+  scenes:
+  - YounesSandboxScene
+  description: 
+  sceneAssets:
+  - {fileID: 102900000, guid: e01e414f299429145aa45b7dd66488c6, type: 3}

@@ -92,6 +92,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   difficultyModulator: {fileID: 11400000, guid: dae37efe04b544a40bba675f462972b6, type: 2}
   targetPos: {fileID: 11400000, guid: 9fc05a68105e4f345a5deadcfa223c15, type: 2}
+  gameManager: {fileID: 11400000, guid: fe8153635d47e6e42959549944550816, type: 2}
 --- !u!61 &1891299057739236872
 BoxCollider2D:
   m_ObjectHideFlags: 0
