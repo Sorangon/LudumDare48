@@ -6,54 +6,66 @@ using NaughtyAttributes;
 public class TileSpawner : MonoBehaviour
 {
     [SerializeField] GameObject tilePrefab;
+    [SerializeField] GameObject wallPrefab;
     [SerializeField] Grid2D grid2D;
     [SerializeField] Transform tileHolder;
 
     [Header("Debug")]
     public int globalHeight;
-    public int localHeight;
 
     [Header("Parameters")]
     public int chunkHeight;
     public bool fillLines = false;
     [Range(0, 100)] public int fillPercent;
+    [Range(0, 100)] public int wallPercent;
 
     [Button]
     public void GenerateTileChunk()
     {
-        //ClearTileHolder();
         LevelSpawner ls = FindObjectOfType<LevelSpawner>();
+       // Transform tileHolder = new GameObject().transform;
 
         globalHeight= ls.currentLine;
-        print("Current Line: " + globalHeight);
-        //localHeight = 0;
-
 
         for (int n = 0; n < chunkHeight; n++)
         {
             for (int i = 0; i < grid2D.width; i++)
             {
+                int wallRng = Random.Range(0, 100);
+
                 if (!fillLines)
                 {
-                    int rng = Random.Range(0, 100);
+                    int fillRng = Random.Range(0, 100);
 
-                    if (rng < fillPercent)
+                    if (fillRng < fillPercent)
                     {
-                        CreateTilePrefab(i, globalHeight + chunkHeight + n);
+                        if (wallRng < wallPercent)
+						{
+                            CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n);
+                        } else
+						{
+                            CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n);
+						}
                     }
                 }
                 else
                 {
-                    CreateTilePrefab(i, globalHeight + chunkHeight + n);
+                    if (wallRng < wallPercent)
+                    {
+                        CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n);
+                    }
+                    else
+                    {
+                        CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n);
+                    }
                 }
             }
         }
     }
-
-    public void CreateTilePrefab(int x, int y)
+    public void CreateTilePrefab(GameObject prefab, int x, int y)
 	{
         Vector3 pos = new Vector3(x, y, 0);
-        GameObject tile = Instantiate(tilePrefab, pos, Quaternion.identity);
+        GameObject tile = Instantiate(prefab, pos, Quaternion.identity);
         tile.transform.SetParent(tileHolder);
     }
 
@@ -67,7 +79,6 @@ public class TileSpawner : MonoBehaviour
                 DestroyImmediate(tileHolder.GetChild(0).gameObject);
             else
                 Destroy(tileHolder.GetChild(0).gameObject);
-
         }
     }
 }
