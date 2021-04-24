@@ -10,8 +10,6 @@ public class Grid2D : MonoBehaviour
     Vector3 offset = new Vector3(.5f, .5f, 0);
 
     GameObject[,] tiles;
-
-
     void Start()
     {
         tiles = new GameObject[width, height];
