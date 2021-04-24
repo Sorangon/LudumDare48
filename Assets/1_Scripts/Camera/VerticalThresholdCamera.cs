@@ -12,10 +12,14 @@ public class VerticalThresholdCamera : MonoBehaviour {
     #endregion
 
     #region Currents
-    private float targetHeight = 800f;
+    private float targetHeight = Mathf.Infinity;
     #endregion
 
     #region Callbacks
+    private void Awake() {
+        targetHeight = transform.position.y;
+    }
+
     private void LateUpdate() {
         if (ReferenceEquals(followTarget, null)) return;
 
