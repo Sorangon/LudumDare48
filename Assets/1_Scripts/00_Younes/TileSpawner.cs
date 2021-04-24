@@ -66,7 +66,7 @@ public class TileSpawner : MonoBehaviour
     }
     public void CreateTilePrefab(GameObject prefab, int x, int y, Transform _parent)
 	{
-        Vector3 pos = new Vector3(x, y, 0);
+        Vector3 pos = new Vector3(x, y * -1, 0);
         GameObject tile = Instantiate(prefab, pos, Quaternion.identity);
         tile.transform.SetParent(_parent);
     }

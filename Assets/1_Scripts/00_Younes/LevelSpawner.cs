@@ -11,8 +11,9 @@ public class LevelSpawner : MonoBehaviour
 
     [Header ("Basic Generation Rules")]
     public int currentLine = 0;
-    public int maxLines = 500;
+    public int maxChunks = 10;
     public int distanceBetweenChunks = 20;
+    private int maxLines;
 
 	#endregion
 	void Start()
@@ -23,13 +24,13 @@ public class LevelSpawner : MonoBehaviour
     [Button] 
     private void GenerateLevel()
 	{
+        maxLines = maxChunks * distanceBetweenChunks;
         ClearLevel();
         currentLine = 0;
 
         for (int lineIndex = 0; lineIndex <= maxLines; lineIndex+= distanceBetweenChunks)
 		{
             currentLine = lineIndex;
-            print("Current line = " + lineIndex);
             ts.GenerateTileChunk();
 		}
 	}
