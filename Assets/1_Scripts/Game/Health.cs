@@ -17,17 +17,25 @@ public class Health : MonoBehaviour {
     [SerializeField] private Object deathBehaviourParameter = null;
 
     [Foldout("Events")]
-    [SerializeField] private UnityEvent onHeal = new UnityEvent();
+    [SerializeField] private IntEvent onInitHealth = new IntEvent();
     [Foldout("Events")]
-    [SerializeField] private UnityEvent onTakeDamages = new UnityEvent();
+    [SerializeField] private IntEvent onInitMaxHealth = new IntEvent();
+    [Foldout("Events")]
+    [SerializeField] private IntEvent onHeal = new IntEvent();
+    [Foldout("Events")]
+    [SerializeField] private IntEvent onTakeDamages = new IntEvent();
     [Foldout("Events")]
     [SerializeField] private UnityEvent onRecover = new UnityEvent();
     [Foldout("Events")]
     [SerializeField] private UnityEvent onEndRecover = new UnityEvent();
     [Foldout("Events")]
-    [SerializeField] private UnityEvent onAddMaxHealth = new UnityEvent();
+    [SerializeField] private IntEvent onAddMaxHealth = new IntEvent();
     [Foldout("Events")]
     [SerializeField] private UnityEvent onDie = new UnityEvent();
+    #endregion
+
+    #region Classes
+    [System.Serializable] public class IntEvent : UnityEvent<int> { }
     #endregion
 
     #region Currents
@@ -46,6 +54,8 @@ public class Health : MonoBehaviour {
     private void Start() {
         currentHealth = maxHealth;
         recoveryTimer = new Timer(recoveryTime, () => onEndRecover?.Invoke());
+        onInitHealth?.Invoke(currentHealth);
+        onInitMaxHealth?.Invoke(maxHealth);
     }
     #endregion
 
@@ -60,7 +70,7 @@ public class Health : MonoBehaviour {
             currentHealth = maxHealth;
         }
 
-        onHeal?.Invoke();
+        onHeal?.Invoke(currentHealth);
     }
 
     public void InflictDamages(int amount) {
@@ -81,17 +91,12 @@ public class Health : MonoBehaviour {
             onRecover?.Invoke();
         }
 
-        onTakeDamages?.Invoke();
+        onTakeDamages?.Invoke(currentHealth);
     }
 
-    public void AddMaxHealth(int amount, float healthPercentageToAdd = 0f) {
+    public void AddMaxHealth(int amount) {
         maxHealth += amount;
-
-        if (healthPercentageToAdd > 0) {
-            currentHealth += Mathf.CeilToInt(amount * healthPercentageToAdd);
-        }
-
-        onAddMaxHealth?.Invoke();
+        onAddMaxHealth?.Invoke(maxHealth);
     }
     #endregion
 
