@@ -13,7 +13,7 @@ public class GameManager : ScriptableObject {
 
     #region Events
     public delegate void GameAction();
-    public event GameAction onStartGame, onEndGame;
+    public event GameAction onStartGame, onEndGame, onResetGameState;
     #endregion
 
     #region Callbacks
@@ -31,6 +31,7 @@ public class GameManager : ScriptableObject {
     #region Game
     public void ResetGameState() {
         scoreManager.ResetScore();
+        onResetGameState?.Invoke();
     }
 
     public void StartGame() {

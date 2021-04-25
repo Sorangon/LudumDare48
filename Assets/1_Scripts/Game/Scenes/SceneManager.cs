@@ -11,7 +11,6 @@ public class SceneManager : ScriptableObject {
     #region Manage
     public void ReloadGameScene() {
         mainGameSceneBundle.LoadAsync();
-        gameManager.ResetGameState();
     }
     #endregion
 }

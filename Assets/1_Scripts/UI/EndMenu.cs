@@ -80,6 +80,7 @@ public class EndMenu : MonoBehaviour {
 
     private void OnLoadingCompleted() {
         EnhancedSceneManager.onSceneAllLoaded -= OnLoadingCompleted;
+        gameManager.ResetGameState();
         loadingPanel.DOFade(0f, fadeDuration);
     }
     #endregion
