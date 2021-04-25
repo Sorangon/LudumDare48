@@ -62,8 +62,8 @@ public class LevelSpawner : MonoBehaviour
         nextLevelThreshold.transform.SetParent(this.transform);
 
         //Next Spawner height
-        //Seems working : if probleme with generation, remove +dstBtwChunks
-        spawnerHeight += maxLines + distanceBetweenChunks;
+        //Need to tweak this for some fixes
+        spawnerHeight += maxLines;
     }
 
     [Button]
