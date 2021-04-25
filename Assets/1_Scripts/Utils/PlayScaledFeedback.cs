@@ -6,7 +6,7 @@ public class PlayScaledFeedback : MonoBehaviour {
     public FeedbackAsset feedback = null;
 
     public void Play(float scale) {
-        transform.localScale = Vector3.one * scale;
+        transform.localScale = Vector3.one * scale * scaleMultiplier;
         feedback.Play(transform);
     }
 }

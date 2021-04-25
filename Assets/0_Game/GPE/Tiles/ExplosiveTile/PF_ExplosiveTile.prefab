@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab652f60da5354a4a9088303477febd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 1
-  feedback: {fileID: 11400000, guid: dba03e22d06034443938f3ded052ff43, type: 2}
+  scaleMultiplier: 0.5
+  feedback: {fileID: 11400000, guid: 87c1c07b484e08848bd09373d1bfb0d1, type: 2}
 --- !u!1001 &6130757155870406063
 PrefabInstance:
   m_ObjectHideFlags: 0
