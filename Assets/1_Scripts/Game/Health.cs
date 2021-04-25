@@ -25,6 +25,8 @@ public class Health : MonoBehaviour {
     [Foldout("Events")]
     [SerializeField] private IntEvent onTakeDamages = new IntEvent();
     [Foldout("Events")]
+    [SerializeField] private UnityEvent onAbsorbDamages = new UnityEvent();
+    [Foldout("Events")]
     [SerializeField] private UnityEvent onRecover = new UnityEvent();
     [Foldout("Events")]
     [SerializeField] private UnityEvent onEndRecover = new UnityEvent();
@@ -75,6 +77,9 @@ public class Health : MonoBehaviour {
 
     public void InflictDamages(int amount) {
         if (amount < 0 || invicible || IsRecovering) {
+            if (invicible) {
+                onAbsorbDamages?.Invoke();
+            }
             return;
         }
 
