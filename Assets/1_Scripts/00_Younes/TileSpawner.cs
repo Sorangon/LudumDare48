@@ -14,6 +14,7 @@ public class TileSpawner : MonoBehaviour
 
     [SerializeField] Grid2D grid2D;
     [SerializeField] DifficultyModulator dm;
+    [SerializeField] LevelSpawner ls;
 
     [Header("Parameters")]
     public int chunkHeight;
@@ -28,7 +29,6 @@ public class TileSpawner : MonoBehaviour
     [Button]
     public void GenerateTileChunk()
     {
-        LevelSpawner ls = FindObjectOfType<LevelSpawner>();
         GameObject holder = new GameObject();
         holder.transform.SetParent(this.transform);
 
@@ -45,53 +45,26 @@ public class TileSpawner : MonoBehaviour
                 int enemyRng = Random.Range(0, 100);
                 int dynamiteRng = Random.Range(0, 100);
 
-                if (!fillLines)
-                {
-                    int fillRng = Random.Range(0, 100);
+                int fillRng = Random.Range(0, 100);
 
-                    if (fillRng < fillPercent)
-                    {
-                        if (dynamiteRng < dynamitePercent)
-						{
-                            CreateTilePrefab(dynamitePrefab, i, globalHeight + chunkHeight + n, holder.transform);
-                            continue;
-                        }
-                        else if (enemyRng < enemyPercent)
-						{
-                            CreateTilePrefab(enemyPrefab, i, globalHeight + chunkHeight + n, holder.transform);
-                            continue;
-
-                        }
-                        else if (wallRng > wallPercent)
-                        {
-                            CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n, holder.transform);
-                            continue;
-
-                        }
-                        else
-                        {
-                            CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n, holder.transform);
-                            continue;
-
-                        }
-                    }
-                }
-                else
+                if (fillRng < fillPercent)
                 {
                     if (dynamiteRng < dynamitePercent)
-                    {
+					{
                         CreateTilePrefab(dynamitePrefab, i, globalHeight + chunkHeight + n, holder.transform);
                         continue;
                     }
                     else if (enemyRng < enemyPercent)
-                    {
+					{
                         CreateTilePrefab(enemyPrefab, i, globalHeight + chunkHeight + n, holder.transform);
                         continue;
+
                     }
                     else if (wallRng > wallPercent)
                     {
                         CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n, holder.transform);
                         continue;
+
                     }
                     else
                     {
