@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42f934478e012d4994b145287f68bac, type: 3}
   m_Name: FB_SfxExplosion
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 0}
+  particleSystem: {fileID: 4501835875949494578, guid: f614ca50157c4af4bbe0d8493ea9c7cf, type: 3}
   relativeRotation: 0
   relativeScale: 0
   soundEffect: {fileID: 8300000, guid: c37834eb3c32cb442bba23a5164be161, type: 3}
