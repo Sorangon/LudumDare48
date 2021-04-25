@@ -71,6 +71,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: dba03e22d06034443938f3ded052ff43, type: 2}
+        m_TargetAssemblyTypeName: CoreDev.Effects.FeedbackAsset, TopDownR2J.Utility
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 765573951855421520}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2868432744450561663
 PrefabInstance:
   m_ObjectHideFlags: 0
