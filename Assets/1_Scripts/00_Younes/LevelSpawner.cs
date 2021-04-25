@@ -33,7 +33,7 @@ public class LevelSpawner : MonoBehaviour
 
 	private void Update()
 	{
-        Debug.Log("Level spawner pos  :" + transform.position);	
+       // Debug.Log("Level spawner pos  :" + transform.position);	
 	}
 
 	[Button]
