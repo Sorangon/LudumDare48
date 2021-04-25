@@ -19,6 +19,66 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 321
   destroy: 0
+  onExplode:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5228806619464824559}
+        m_TargetAssemblyTypeName: PlayScaledFeedback, LDJAM.Runtime
+        m_MethodName: Play
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &8099578192880090618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1606033641642081302}
+  - component: {fileID: 5228806619464824559}
+  m_Layer: 0
+  m_Name: Feedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1606033641642081302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099578192880090618}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6884612215051427327}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5228806619464824559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099578192880090618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab652f60da5354a4a9088303477febd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 1
+  feedback: {fileID: 11400000, guid: dba03e22d06034443938f3ded052ff43, type: 2}
 --- !u!1001 &6130757155870406063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,5 +211,10 @@ PrefabInstance:
 --- !u!1 &6884612215051427324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 765573951855421523, guid: 1e05f060030051941a53d85dacfdca6a, type: 3}
+  m_PrefabInstance: {fileID: 6130757155870406063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6884612215051427327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 765573951855421520, guid: 1e05f060030051941a53d85dacfdca6a, type: 3}
   m_PrefabInstance: {fileID: 6130757155870406063}
   m_PrefabAsset: {fileID: 0}

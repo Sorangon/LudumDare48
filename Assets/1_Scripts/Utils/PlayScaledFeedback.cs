@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using CoreDev.Effects;
 using UnityEngine;
 
-public class PlayScaledFeedback : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class PlayScaledFeedback : MonoBehaviour {
+    public float scaleMultiplier = 1f;
+    public FeedbackAsset feedback = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Play(float scale) {
+        transform.localScale = Vector3.one * scale;
+        feedback.Play(transform);
     }
 }
