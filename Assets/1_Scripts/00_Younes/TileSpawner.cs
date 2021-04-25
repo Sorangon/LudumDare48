@@ -73,6 +73,7 @@ public class TileSpawner : MonoBehaviour
     public void ClearTileHolder()
 	{
         int childs = transform.childCount;
+        print("Childs to destroy : " + childs);
         for (int i = 0; i < childs; i++)
 		{
             if (!Application.isPlaying)

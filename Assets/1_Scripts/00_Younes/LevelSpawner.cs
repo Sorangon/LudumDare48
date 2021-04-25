@@ -19,10 +19,13 @@ public class LevelSpawner : MonoBehaviour
     public int distanceBetweenChunks = 20;
     private int maxLines;
 
+    public bool firstChunks = true;
+
 	#endregion
 	void Start()
     {
         spawnerHeight = 0;
+        firstChunks = true;
         ClearLevel();
         GenerateLevel();
     }
@@ -31,7 +34,7 @@ public class LevelSpawner : MonoBehaviour
     public void GenerateLevel()
 	{
         //Init
-        transform.position = new Vector3(0, spawnerHeight, 0);
+        transform.position = new Vector3(0, 0, 0);
         maxLines = maxChunks * distanceBetweenChunks;
         ClearLevel();
         currentLine = 0;
@@ -44,11 +47,11 @@ public class LevelSpawner : MonoBehaviour
 		}
 
         //Updating level offset to be centered
-        Vector3 pos = new Vector3(-grid.width / 2, spawnerHeight, 0);
+        Vector3 pos = new Vector3(-grid.width / 2, 0, 0);
         transform.position = pos;
 
         //Threshold for triggering next Level Generation
-        Vector3 thresholdPos = new Vector3(0, currentLine * -1, 0) ; //Tweak this to get correct value
+        Vector3 thresholdPos = new Vector3(0, (currentLine +  1 * distanceBetweenChunks) * -1, 0) ; //Tweak this to get correct value
         GameObject nextLevelThreshold = Instantiate(nextLevelThresholdPrefab, thresholdPos, Quaternion.identity);
         nextLevelThreshold.name = "Next Level Threshold Prefab";
         nextLevelThreshold.transform.SetParent(this.transform);
