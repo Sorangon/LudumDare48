@@ -24,7 +24,7 @@ public class GameSession {
     }
 
     public void Stop() {
-        ResetAll();
+        difficultyModulator.Reinitialize();
     }
 
     public void Update() {
