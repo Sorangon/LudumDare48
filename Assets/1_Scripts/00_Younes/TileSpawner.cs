@@ -151,7 +151,7 @@ public class TileSpawner : MonoBehaviour
             chunkHeight = 3;
             fillPercent = 60;
             wallPercent = 5;
-            enemyPercent = 2;
+            enemyPercent = 4;
             dynamitePercent = 2;
 
         }
@@ -160,7 +160,7 @@ public class TileSpawner : MonoBehaviour
             chunkHeight = 3;
             fillPercent = 65;
             wallPercent = 8;
-            enemyPercent = 3;
+            enemyPercent = 4;
             dynamitePercent = 3;
         }
         else if (d < .5)
@@ -168,7 +168,7 @@ public class TileSpawner : MonoBehaviour
             chunkHeight = 3;
             fillPercent = 70;
             wallPercent = 10;
-            enemyPercent = 4;
+            enemyPercent = 5;
             dynamitePercent = 3;
 
         }
@@ -185,7 +185,7 @@ public class TileSpawner : MonoBehaviour
             chunkHeight = 4;
             fillPercent = 75;
             wallPercent = 12;
-            enemyPercent = 5;
+            enemyPercent = 6;
             dynamitePercent = 3;
 
         }
@@ -194,7 +194,7 @@ public class TileSpawner : MonoBehaviour
             chunkHeight = 4;
             fillPercent = 80;
             wallPercent = 14;
-            enemyPercent = 5;
+            enemyPercent = 7;
             dynamitePercent = 4;
 
         }
@@ -204,7 +204,7 @@ public class TileSpawner : MonoBehaviour
             chunkHeight = 4;
             fillPercent = 85;
             wallPercent = 17;
-            enemyPercent = 6;
+            enemyPercent = 8;
             dynamitePercent = 5;
 
         }
@@ -213,7 +213,7 @@ public class TileSpawner : MonoBehaviour
             chunkHeight = 5;
             fillPercent = 90;
             wallPercent = 20;
-            enemyPercent = 6;
+            enemyPercent = 10;
             dynamitePercent = 7;
 
         }

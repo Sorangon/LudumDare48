@@ -10,6 +10,8 @@ public class SideWallsBehavior : MonoBehaviour
     [SerializeField] PositionVariable playerPos;
     [SerializeField] DifficultyModulator dm;
 
+    public bool areWallsMoving = false;
+
     [Header("Bounds")]
     public float startXLeft;
     public float endXLeft;
@@ -26,11 +28,6 @@ public class SideWallsBehavior : MonoBehaviour
         StartCoroutine(UpdateWalls());
     }
 
-    void Update()
-    {
-
-    }
-
     IEnumerator UpdateWalls()
 	{
         while (dm.DifficultyAmount != 1)
@@ -38,8 +35,11 @@ public class SideWallsBehavior : MonoBehaviour
             Vector3 targetPosLeft = new Vector3(endXLeft, leftWall.transform.position.y, 0);
             Vector3 targetPosRight = new Vector3(endXRight, rightWall.transform.position.y, 0);
 
-            leftWall.transform.position = Vector3.Lerp(leftWall.transform.position, targetPosLeft, dm.DifficultyAmount);
-            rightWall.transform.position = Vector3.Lerp(rightWall.transform.position, targetPosRight, dm.DifficultyAmount);
+            if (areWallsMoving)
+			{
+                leftWall.transform.position = Vector3.Lerp(leftWall.transform.position, targetPosLeft, dm.DifficultyAmount);
+                rightWall.transform.position = Vector3.Lerp(rightWall.transform.position, targetPosRight, dm.DifficultyAmount);
+			}
 
             leftWall.transform.position = new Vector3(leftWall.transform.position.x, playerPos.position.y, 0);
             rightWall.transform.position = new Vector3(rightWall.transform.position.x, playerPos.position.y, 0);
