@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class Collectable : MonoBehaviour {
     #region Settings
     [Foldout("Events")]
-    private UnityEvent onCollect = new UnityEvent();
+    [SerializeField] private UnityEvent onCollect = new UnityEvent();
     #endregion
 
     #region Collectable Callbacks
