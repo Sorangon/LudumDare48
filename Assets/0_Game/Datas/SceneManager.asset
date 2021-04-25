@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73b757ce29b94b44a48f8b2189c1fe6, type: 3}
   m_Name: SceneManager
   m_EditorClassIdentifier: 
-  mainGameSceneBundle: {fileID: 11400000, guid: f6781f98226f8184fb19d2716c2bd8ac, type: 2}
+  mainGameSceneBundle: {fileID: 11400000, guid: b7cbd79d88e4d6246adbe899dc3f45ed, type: 2}
   gameManager: {fileID: 11400000, guid: fe8153635d47e6e42959549944550816, type: 2}
