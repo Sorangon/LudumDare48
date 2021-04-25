@@ -1,14 +1,21 @@
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GunWeapon : Weapon {
     #region Settings
 
     [Header("Settings")]
     public float shootRate = 0.2f;
+    public float spead = 10f;
+    [Min(1)] public int bullets = 1;
 
     [Header("References")]
     public Projectile projectile = null;
     public Transform muzzlePos = null;
+
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent onShoot = new UnityEvent();
     #endregion
 
     #region Currents
@@ -41,7 +48,11 @@ public class GunWeapon : Weapon {
 
     #region Attack
     private void Shoot() {
-        Instantiate(projectile, muzzlePos.position, muzzlePos.rotation); 
+        for (int i = 0; i < bullets; i++) {
+            Quaternion randomRot = Quaternion.AngleAxis(Random.Range(spead * -0.5f, spead * 0.5f), Vector3.forward);
+            Instantiate(projectile, muzzlePos.position, muzzlePos.rotation * randomRot);
+        }
+        onShoot?.Invoke();
     }
     #endregion
 }
