@@ -61,12 +61,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 765573951855421523, guid: 1e05f060030051941a53d85dacfdca6a, type: 3}
   wallPrefab: {fileID: 6334512028207828155, guid: 232607645da9af64badf044370f8877b, type: 3}
+  enemyPrefab: {fileID: 333048141849941862, guid: 40183c3b1c2aa99498e7defdbaa2ec34, type: 3}
+  dynamitePrefab: {fileID: 6884612215051427324, guid: e433f4dd44c64d543bf7ec011df05184, type: 3}
   grid2D: {fileID: 3479986125888669151}
   dm: {fileID: 11400000, guid: dae37efe04b544a40bba675f462972b6, type: 2}
   chunkHeight: 2
   fillLines: 0
-  fillPercent: 51
-  wallPercent: 18
+  fillPercent: 50
+  wallPercent: 2
+  enemyPercent: 0
 --- !u!114 &3479986125888669150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +88,6 @@ MonoBehaviour:
   dm: {fileID: 11400000, guid: dae37efe04b544a40bba675f462972b6, type: 2}
   spawnerHeight: 300
   currentLine: 300
-  maxChunks: 5
-  distanceBetweenChunks: 5
+  maxChunks: 3
+  distanceBetweenChunks: 15
   firstChunks: 1

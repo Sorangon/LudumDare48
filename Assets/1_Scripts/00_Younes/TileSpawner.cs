@@ -9,6 +9,8 @@ public class TileSpawner : MonoBehaviour
     [SerializeField] GameObject tilePrefab;
     [SerializeField] GameObject wallPrefab;
     [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject dynamitePrefab;
+
 
     [SerializeField] Grid2D grid2D;
     [SerializeField] DifficultyModulator dm;
