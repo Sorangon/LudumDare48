@@ -17,7 +17,7 @@ MonoBehaviour:
   knockbackForce: 15
   targetLayers:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 321
   destroy: 0
 --- !u!1001 &6130757155870406063
 PrefabInstance:

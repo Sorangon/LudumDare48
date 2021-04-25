@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46227b9129cc6724e8a414c3e33d3290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damping: 0.3
-  heightThreshold: -4.5
+  damping: 0.08
+  heightThreshold: -3
   maxDistance: 5
   target: {fileID: 11400000, guid: 9fc05a68105e4f345a5deadcfa223c15, type: 2}
