@@ -189,9 +189,9 @@ MonoBehaviour:
   playerPos: {fileID: 11400000, guid: 9fc05a68105e4f345a5deadcfa223c15, type: 2}
   dm: {fileID: 11400000, guid: dae37efe04b544a40bba675f462972b6, type: 2}
   areWallsMoving: 0
-  startXLeft: -14.5
+  startXLeft: -13.5
   endXLeft: -8.5
-  startXRight: 14.5
+  startXRight: 13.5
   endXRight: 8.5
 --- !u!1 &474235782431711220
 GameObject:
