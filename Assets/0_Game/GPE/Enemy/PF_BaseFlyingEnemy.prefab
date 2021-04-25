@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27de3a09bf181c542808012cadf1b4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 4
   movementAcceleration: 0.3
   movementDrift: 0.5
-  maxFollowDistance: 8
+  maxFollowDistance: 12
   targetPosition: {fileID: 11400000, guid: 9fc05a68105e4f345a5deadcfa223c15, type: 2}
   rigidbody: {fileID: 7923433618139559037}
 --- !u!50 &7923433618139559037
@@ -120,6 +120,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onTakeDamages:
+    m_PersistentCalls:
+      m_Calls: []
+  onAbsorbDamages:
     m_PersistentCalls:
       m_Calls: []
   onRecover:
