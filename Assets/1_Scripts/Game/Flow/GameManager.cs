@@ -25,6 +25,7 @@ public class GameManager : ScriptableObject {
 
     public void Reinitialize() {
         currentSession = null;
+        scoreManager.ResetScore();
     }
     #endregion
 
