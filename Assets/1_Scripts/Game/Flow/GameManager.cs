@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : ScriptableObject {
     #region Settings
     public ScoreManager scoreManager = null;
+    public DifficultyModulator difficultyModulator = null;
     #endregion
 
     #region Current
@@ -33,13 +34,15 @@ public class GameManager : ScriptableObject {
     }
 
     public void StartGame() {
-        currentSession = new GameSession(scoreManager);
+        currentSession = new GameSession(scoreManager, difficultyModulator);
         currentSession.Start();
         Debug.Log("Start Game");
         onStartGame?.Invoke();
     }
 
     public void EndGame() {
+        currentSession.Stop();
+        currentSession = null;
         onEndGame?.Invoke();
     }
     #endregion

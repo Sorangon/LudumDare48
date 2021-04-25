@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6364322235489633929}
   - component: {fileID: 424518160534411184}
   - component: {fileID: 759878386657706283}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PF_UI_EndMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 11400000, guid: fe8153635d47e6e42959549944550816, type: 2}
   sceneManager: {fileID: 11400000, guid: 1d2c93c4b756aa445af8793b5707fd1b, type: 2}
-  fadeDuration: 0.5
+  fadeDuration: 0.25
   loadingPanel: {fileID: 1096345908337536799}
   endMenuPanel: {fileID: 8042151135920962812}
   endMenuDisplayDelay: 0

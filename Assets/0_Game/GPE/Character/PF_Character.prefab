@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78447fda0b549d459c4563c40acdd0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 150
   invicible: 0
   deathBehaviour: {fileID: 11400000, guid: 1ca48525c48f10d4c8a05cfa6bcc51f8, type: 2}
   deathBehaviourParameter: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4734005540161356345}
   - component: {fileID: 2438842342383231914}
   - component: {fileID: 941020819416181665}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TXT_DeathMesessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 18788011928268318}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PF_UI_EndMenuResult
   m_TagString: Untagged
   m_Icon: {fileID: 0}

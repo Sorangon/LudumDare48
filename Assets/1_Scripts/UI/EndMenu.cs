@@ -36,16 +36,19 @@ public class EndMenu : MonoBehaviour {
 
     #region Input Callbacks
     public void OnContinue(InputAction.CallbackContext callbackContext) {
-        if (isDisplayingMenu) {
-            HideEndMenu();
-            StartCoroutine(Reload());
-
+        if(callbackContext.action.phase == InputActionPhase.Performed) {
+            if (isDisplayingMenu) {
+                HideEndMenu();
+                StartCoroutine(Reload());
+            }
         }
     }
 
     public void OnQuit(InputAction.CallbackContext callbackContext) {
-        if (isDisplayingMenu) {
-            gameManager.QuitGame();
+        if(callbackContext.action.phase == InputActionPhase.Performed) {
+            if (isDisplayingMenu) {
+                gameManager.QuitGame();
+            }
         }
     }
     #endregion

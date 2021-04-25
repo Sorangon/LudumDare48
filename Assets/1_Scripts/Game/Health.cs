@@ -37,9 +37,7 @@ public class Health : MonoBehaviour {
 
     #region Callbacks
     private void Start() {
-        if (currentHealth > maxHealth) {
-            currentHealth = maxHealth;
-        }
+        currentHealth = maxHealth;
     }
     #endregion
 
