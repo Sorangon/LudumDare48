@@ -44,13 +44,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -135,14 +135,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034130997681188758}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c1ed330b925c6848a28f642db8558e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hubSoundtrack: {fileID: 0}
-  startGameJingle: {fileID: 0}
-  gameSoundtrack: {fileID: 0}
-  gameOverSoundtrack: {fileID: 0}
+  hubSoundtrack: {fileID: 8300000, guid: cd4e689b94c67de4fad16699ba8f8651, type: 3}
+  startGameJingle: {fileID: 8300000, guid: 17dd9df85679dab4fab288698c89e424, type: 3}
+  gameSoundtrack: {fileID: 8300000, guid: cafb9bf6451f9424d9e82ddd4bb2116c, type: 3}
+  gameOverSoundtrack: {fileID: 8300000, guid: 661dc02af46b3ec4fb91287b7be174a1, type: 3}
   gameManager: {fileID: 11400000, guid: fe8153635d47e6e42959549944550816, type: 2}
   source: {fileID: 2034130997681187947}

@@ -18,7 +18,7 @@ public class CharacterInput : MonoBehaviour {
 
     public void JumpAction(InputAction.CallbackContext callbackContext) {
         if(callbackContext.action.phase == InputActionPhase.Performed) {
-            controller.Jump();
+            controller.RequestJump();
         }
     }
 

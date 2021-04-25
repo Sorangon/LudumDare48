@@ -38,23 +38,28 @@ public class SoundtrackManager : MonoBehaviour {
 
     #region Events
     private void OnEndGame() {
-        source.clip = gameOverSoundtrack;
+        PlayClip(gameOverSoundtrack);
         isGameOver = true;
     }
 
     private async void OnStartGame() {
-        source.clip = startGameJingle;
+        PlayClip(startGameJingle);
 
         await Task.Delay(Mathf.RoundToInt(startGameJingle.length * 1000f));
 
         if (!isGameOver) {
-            source.clip = gameSoundtrack;
+            PlayClip(gameSoundtrack);
         }
     }
 
     private void OnResetGameState() {
-        source.clip = hubSoundtrack;
+        PlayClip(hubSoundtrack);
         isGameOver = false;
+    }
+
+    private void PlayClip(AudioClip clip) {
+        source.clip = clip;
+        source.Play();
     }
     #endregion
 }

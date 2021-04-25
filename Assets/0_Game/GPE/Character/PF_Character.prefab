@@ -156,7 +156,7 @@ MonoBehaviour:
   m_LightOrder: 1
   m_OverlapOperation: 0
   m_NormalMapDistance: 50
-  m_NormalMapQuality: 0
+  m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowIntensityEnabled: 1
   m_ShadowIntensity: 0.05
