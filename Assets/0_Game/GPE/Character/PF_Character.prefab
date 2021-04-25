@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 150
+  recoveryTime: 0.3
   invicible: 0
   deathBehaviour: {fileID: 11400000, guid: 1ca48525c48f10d4c8a05cfa6bcc51f8, type: 2}
   deathBehaviourParameter: {fileID: 0}
@@ -436,6 +437,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onTakeDamages:
+    m_PersistentCalls:
+      m_Calls: []
+  onRecover:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndRecover:
     m_PersistentCalls:
       m_Calls: []
   onAddMaxHealth:

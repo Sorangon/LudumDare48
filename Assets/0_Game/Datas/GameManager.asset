@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameManager
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 11400000, guid: e5ee021c9adf75d4ba3cdd2b793f05aa, type: 2}
+  difficultyModulator: {fileID: 11400000, guid: dae37efe04b544a40bba675f462972b6, type: 2}

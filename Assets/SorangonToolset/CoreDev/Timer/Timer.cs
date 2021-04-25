@@ -12,7 +12,7 @@
         #endregion
 
         #region Current
-        public bool isPlaying = true;
+        public bool isPlaying = false;
         public float elapsedTime = 0f;
         private float duration = 1f;
         private System.Action callback = null;
@@ -28,6 +28,7 @@
         #region Behaviour
         public void Play() {
             elapsedTime = 0f;
+            isPlaying = true;
             TimerHandle.RegisterTimer(this);
         }
 
@@ -44,12 +45,13 @@
         }
 
         public void Cancel() {
+            isPlaying = false;
             TimerHandle.UnregisterTimer(this);
         }
 
         public void Stop() {
-            callback.Invoke();
-            TimerHandle.UnregisterTimer(this);
+            Cancel();
+            callback?.Invoke();
         }
         #endregion
     }
