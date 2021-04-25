@@ -41,6 +41,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onAbsorbDamages:
+    m_PersistentCalls:
+      m_Calls: []
   onRecover:
     m_PersistentCalls:
       m_Calls: []
@@ -234,7 +237,8 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3149808959712023185, guid: 232607645da9af64badf044370f8877b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 232607645da9af64badf044370f8877b, type: 3}
 --- !u!1 &765573951855421523 stripped
 GameObject:
