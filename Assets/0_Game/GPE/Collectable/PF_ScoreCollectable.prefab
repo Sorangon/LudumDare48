@@ -12,6 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddda3494812250e4e9834e34ad497ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCollect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: b2c2a885328980540a67a8e7927aa73a, type: 2}
+        m_TargetAssemblyTypeName: CoreDev.Effects.FeedbackAsset, TopDownR2J.Utility
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 242333487882642634}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   points: 500
   scoreManager: {fileID: 11400000, guid: e5ee021c9adf75d4ba3cdd2b793f05aa, type: 2}
 --- !u!1001 &5275065269164401029
@@ -23,7 +38,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1965718823940920050, guid: 93b71aec225483d4fb8bee8b39397971, type: 3}
       propertyPath: m_Name
-      value: PF_BaseCollectable
+      value: PF_ScoreCollectable
       objectReference: {fileID: 0}
     - target: {fileID: 5361600142105789775, guid: 93b71aec225483d4fb8bee8b39397971, type: 3}
       propertyPath: m_RootOrder
@@ -74,5 +89,10 @@ PrefabInstance:
 --- !u!1 &5941208000840037239 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1965718823940920050, guid: 93b71aec225483d4fb8bee8b39397971, type: 3}
+  m_PrefabInstance: {fileID: 5275065269164401029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &242333487882642634 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5361600142105789775, guid: 93b71aec225483d4fb8bee8b39397971, type: 3}
   m_PrefabInstance: {fileID: 5275065269164401029}
   m_PrefabAsset: {fileID: 0}
