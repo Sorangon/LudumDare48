@@ -33,7 +33,7 @@ public class LevelSpawner : MonoBehaviour
 
 	private void Update()
 	{
-        Debug.Log("Level spawner pos  :" + transform.position);	
+       // Debug.Log("Level spawner pos  :" + transform.position);	
 	}
 
 	[Button]
@@ -82,22 +82,22 @@ public class LevelSpawner : MonoBehaviour
 
         //Lower max chunk per level & Lower space Btw chunks
         if (d < .2) {
-            distanceBetweenChunks = 13;
+            distanceBetweenChunks = 8;
 
 		} else if (d < .4){
-            distanceBetweenChunks = 12;
+            distanceBetweenChunks = 7;
        
         }
         else if (d < .6){
-            distanceBetweenChunks = 11;
+            distanceBetweenChunks = 6;
         }
         else if (d < .8)
 		{
-            distanceBetweenChunks = 10;
+            distanceBetweenChunks = 5;
         }
         else
 		{
-            distanceBetweenChunks = 8;
+            distanceBetweenChunks = 4;
         }
     }
 }

@@ -12,6 +12,7 @@ public class OnThresholdTrigger : MonoBehaviour
 		{
 			//Spawn new Level
 			LevelSpawner ls = FindObjectOfType<LevelSpawner>();
+			ls.currentLine += ls.distanceBetweenChunks;
 			ls.GenerateLevel();
 
 			ClearSpawner(ls);
