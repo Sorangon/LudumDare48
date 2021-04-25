@@ -40,6 +40,8 @@ public class ExplosiveArea : MonoBehaviour {
             }
         }
 
+        onExplode?.Invoke(areaRadius);
+
         if (destroy) {
             Destroy(gameObject);
         }
