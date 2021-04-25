@@ -56,7 +56,7 @@ public class LevelSpawner : MonoBehaviour
         transform.position = pos;
 
         //Threshold for triggering next Level Generation
-        Vector3 thresholdPos = new Vector3(0, (currentLine + 1 * distanceBetweenChunks) * -1, 0); //Tweak this to get correct value
+        Vector3 thresholdPos = new Vector3(0, (currentLine) * -1, 0); //Tweak this to get correct value
         GameObject nextLevelThreshold = Instantiate(nextLevelThresholdPrefab, thresholdPos, Quaternion.identity);
         nextLevelThreshold.name = "Next Level Threshold Prefab";
         nextLevelThreshold.transform.SetParent(this.transform);
