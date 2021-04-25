@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4880110922793996791}
   - component: {fileID: 3226183083194816185}
   - component: {fileID: 4619767304864921726}
+  - component: {fileID: 5037355307514406450}
   m_Layer: 5
   m_Name: TXT_ScoreTextField
   m_TagString: Untagged
@@ -134,6 +135,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5037355307514406450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394109939712519145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7c8a55047fe4349a9423bf2ca48964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 0
+  loop: 0
+  forceComplete: 1
+  duration: 0.2
+  punch: {x: 0.6, y: 0.6, z: 0.6}
+  vibrato: 20
+  elasticity: 0.2
 --- !u!1 &5001491625080806935
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,3 +214,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreTextField: {fileID: 4619767304864921726}
   scoreManager: {fileID: 11400000, guid: e5ee021c9adf75d4ba3cdd2b793f05aa, type: 2}
+  onUpdateScore:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5037355307514406450}
+        m_TargetAssemblyTypeName: TweenComponent, LDJAM.Runtime
+        m_MethodName: Tween
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

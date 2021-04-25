@@ -175,6 +175,8 @@ GameObject:
   - component: {fileID: 3668688904634374326}
   - component: {fileID: 1129625112455827928}
   - component: {fileID: 238470676233377378}
+  - component: {fileID: 5059913008597966193}
+  - component: {fileID: 74208673925088476}
   m_Layer: 5
   m_Name: PF_UI_HealthBar
   m_TagString: Untagged
@@ -226,6 +228,73 @@ MonoBehaviour:
   playerMaxHealthVariable: {fileID: 11400000, guid: 25587e87311b3f9479650a2ffbd61e0b, type: 2}
   slider: {fileID: 8393141760239379590}
   fillImage: {fileID: 2164891362264203041}
+  onUpdateHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5059913008597966193}
+        m_TargetAssemblyTypeName: TweenComponent, LDJAM.Runtime
+        m_MethodName: Tween
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 74208673925088476}
+        m_TargetAssemblyTypeName: TweenComponent, LDJAM.Runtime
+        m_MethodName: Tween
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5059913008597966193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782510626917930661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5a7b7f1013cac4d82184b224861de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 0
+  loop: 0
+  forceComplete: 1
+  duration: 0.2
+  strength: 60
+  vibrato: 70
+  randomness: 90
+  snapping: 0
+  fadeOut: 1
+--- !u!114 &74208673925088476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782510626917930661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7c8a55047fe4349a9423bf2ca48964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 0
+  loop: 0
+  forceComplete: 1
+  duration: 0.1
+  punch: {x: -0.4, y: -0.4, z: -0.4}
+  vibrato: 0
+  elasticity: 0
 --- !u!1 &3036418955859404022
 GameObject:
   m_ObjectHideFlags: 0

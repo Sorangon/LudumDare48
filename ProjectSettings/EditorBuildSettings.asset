@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1_Scripts/00_Younes/YounesSandboxScene.unity
     guid: e01e414f299429145aa45b7dd66488c6
-  - enabled: 1
-    path: Assets/0_Game/Scenes/Proto/SCN_JulienProto.unity
-    guid: 2cfc27817e9c81c4bad9e11903429be5
   m_configObjects: {}

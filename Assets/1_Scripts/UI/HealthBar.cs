@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
@@ -14,6 +15,8 @@ public class HealthBar : MonoBehaviour
     [Header("UI")]
     public Slider slider = null;
     public Image fillImage = null;
+
+    public UnityEvent onUpdateHealth = new UnityEvent();
     #endregion
 
     #region Callbacks
@@ -29,6 +32,7 @@ public class HealthBar : MonoBehaviour
 
     private void OnUpdateHealth() {
         slider.value = playerHealthVariable.GetValue();
+        onUpdateHealth?.Invoke();
     }
     private void OnUpdateMaxHealth() {
         slider.maxValue = playerMaxHealthVariable.GetValue();
