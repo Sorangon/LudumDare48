@@ -7,6 +7,7 @@ public class SideWallsBehavior : MonoBehaviour
 	#region Fields
 	[SerializeField] GameObject leftWall;
     [SerializeField] GameObject rightWall;
+    [SerializeField] GameObject background;
     [SerializeField] PositionVariable playerPos;
     [SerializeField] DifficultyModulator dm;
 
@@ -26,6 +27,11 @@ public class SideWallsBehavior : MonoBehaviour
         rightWall.transform.position = new Vector3(startXRight, playerPos.position.y, 0);
 
         StartCoroutine(UpdateWalls());
+    }
+
+	private void Update()
+	{
+        background.transform.position = new Vector3(background.transform.position.x, playerPos.position.y, 0);
     }
 
     IEnumerator UpdateWalls()

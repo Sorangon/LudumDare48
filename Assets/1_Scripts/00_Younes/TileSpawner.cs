@@ -82,25 +82,21 @@ public class TileSpawner : MonoBehaviour
                     {
                         CreateTilePrefab(dynamitePrefab, i, globalHeight + chunkHeight + n, holder.transform);
                         continue;
-
                     }
                     else if (enemyRng < enemyPercent)
                     {
                         CreateTilePrefab(enemyPrefab, i, globalHeight + chunkHeight + n, holder.transform);
                         continue;
-
                     }
                     else if (wallRng > wallPercent)
                     {
                         CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n, holder.transform);
                         continue;
-
                     }
                     else
                     {
                         CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n, holder.transform);
                         continue;
-
                     }
                 }
             }
@@ -126,7 +122,7 @@ public class TileSpawner : MonoBehaviour
         }
     }
 
-    void UpdateDifficulty()
+    public void UpdateDifficulty()
     {
         float d = dm.DifficultyAmount; //Between 0 or 1
 
