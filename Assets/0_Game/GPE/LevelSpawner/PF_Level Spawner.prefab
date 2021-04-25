@@ -70,6 +70,7 @@ MonoBehaviour:
   fillPercent: 50
   wallPercent: 2
   enemyPercent: 0
+  dynamitePercent: 0
 --- !u!114 &3479986125888669150
 MonoBehaviour:
   m_ObjectHideFlags: 0

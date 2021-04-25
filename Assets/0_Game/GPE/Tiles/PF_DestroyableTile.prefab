@@ -13,13 +13,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  recoveryTime: 0
   invicible: 0
   deathBehaviour: {fileID: 0}
   deathBehaviourParameter: {fileID: 0}
+  onInitHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onInitMaxHealth:
+    m_PersistentCalls:
+      m_Calls: []
   onHeal:
     m_PersistentCalls:
       m_Calls: []
   onTakeDamages:
+    m_PersistentCalls:
+      m_Calls: []
+  onRecover:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndRecover:
     m_PersistentCalls:
       m_Calls: []
   onAddMaxHealth:
@@ -91,21 +104,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6334512028207828153, guid: 232607645da9af64badf044370f8877b, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334512028207828153, guid: 232607645da9af64badf044370f8877b, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334512028207828153, guid: 232607645da9af64badf044370f8877b, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334512028207828153, guid: 232607645da9af64badf044370f8877b, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334512028207828153, guid: 232607645da9af64badf044370f8877b, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334512028207828153, guid: 232607645da9af64badf044370f8877b, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6334512028207828155, guid: 232607645da9af64badf044370f8877b, type: 3}
       propertyPath: m_Name
       value: PF_DestroyableTile
       objectReference: {fileID: 0}
     - target: {fileID: 6334512028207828158, guid: 232607645da9af64badf044370f8877b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: adaad8fb2fa705346800d87691186bb1, type: 3}
+    - target: {fileID: 6334512028207828158, guid: 232607645da9af64badf044370f8877b, type: 3}
       propertyPath: m_Color.b
-      value: 0.14017443
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6334512028207828158, guid: 232607645da9af64badf044370f8877b, type: 3}
       propertyPath: m_Color.g
-      value: 0.26581544
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6334512028207828158, guid: 232607645da9af64badf044370f8877b, type: 3}
       propertyPath: m_Color.r
-      value: 0.3962264
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 232607645da9af64badf044370f8877b, type: 3}

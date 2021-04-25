@@ -45,7 +45,6 @@ public class TileSpawner : MonoBehaviour
                 int enemyRng = Random.Range(0, 100);
                 int dynamiteRng = Random.Range(0, 100);
 
-
                 if (!fillLines)
                 {
                     int fillRng = Random.Range(0, 100);
@@ -55,17 +54,25 @@ public class TileSpawner : MonoBehaviour
                         if (dynamiteRng < dynamitePercent)
 						{
                             CreateTilePrefab(dynamitePrefab, i, globalHeight + chunkHeight + n, holder.transform);
+                            continue;
                         }
                         else if (enemyRng < enemyPercent)
 						{
                             CreateTilePrefab(enemyPrefab, i, globalHeight + chunkHeight + n, holder.transform);
+                            continue;
+
                         }
                         else if (wallRng > wallPercent)
                         {
                             CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n, holder.transform);
-                        } else
+                            continue;
+
+                        }
+                        else
                         {
                             CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n, holder.transform);
+                            continue;
+
                         }
                     }
                 }
@@ -74,18 +81,26 @@ public class TileSpawner : MonoBehaviour
                     if (dynamiteRng < dynamitePercent)
                     {
                         CreateTilePrefab(dynamitePrefab, i, globalHeight + chunkHeight + n, holder.transform);
+                        continue;
+
                     }
                     else if (enemyRng < enemyPercent)
                     {
                         CreateTilePrefab(enemyPrefab, i, globalHeight + chunkHeight + n, holder.transform);
+                        continue;
+
                     }
                     else if (wallRng > wallPercent)
                     {
                         CreateTilePrefab(tilePrefab, i, globalHeight + chunkHeight + n, holder.transform);
+                        continue;
+
                     }
                     else
                     {
                         CreateTilePrefab(wallPrefab, i, globalHeight + chunkHeight + n, holder.transform);
+                        continue;
+
                     }
                 }
             }
