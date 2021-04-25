@@ -14,16 +14,7 @@ public class OnThresholdTrigger : MonoBehaviour
 			LevelSpawner ls = FindObjectOfType<LevelSpawner>();
 			ls.GenerateLevel();
 
-			if (!ls.firstChunks)
-			{
-				//Destroy old chunks
-				Transform _t = ls.transform;
-
-				for (int i = 0; i <= ls.maxChunks - 1; i++)
-				{
-					Destroy(_t.GetChild(i).gameObject);
-				}
-			}
+			ClearSpawner(ls);
 
 			if (ls.firstChunks)
 			{
@@ -33,5 +24,20 @@ public class OnThresholdTrigger : MonoBehaviour
 			//Destroy this
 			Destroy(this.gameObject);
 		}
+	}
+
+	void ClearSpawner(LevelSpawner ls)
+	{
+		if (!ls.firstChunks)
+		{
+			//Destroy old chunks
+			Transform _t = ls.transform;
+
+			for (int i = 0; i <= ls.maxChunks - 1; i++)
+			{
+				Destroy(_t.GetChild(i).gameObject);
+			}
+		}
+
 	}
 }
