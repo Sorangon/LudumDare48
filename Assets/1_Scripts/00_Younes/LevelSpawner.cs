@@ -74,24 +74,26 @@ public class LevelSpawner : MonoBehaviour
     void ComputeDifficulty()
     {
         float d = dm.DifficultyAmount; //Between 0 or 1
+        print("Actual difficulty : " + d);
 
         //Lower max chunk per level & Lower space Btw chunks
         if (d < .2) {
-            distanceBetweenChunks = 19;
+            distanceBetweenChunks = 13;
+
 		} else if (d < .4){
-            distanceBetweenChunks = 16;
+            distanceBetweenChunks = 12;
        
         }
         else if (d < .6){
-            distanceBetweenChunks = 14;
+            distanceBetweenChunks = 11;
         }
         else if (d < .8)
 		{
-            distanceBetweenChunks = 12;
+            distanceBetweenChunks = 10;
         }
         else
 		{
-            distanceBetweenChunks = 10;
+            distanceBetweenChunks = 8;
         }
     }
 }

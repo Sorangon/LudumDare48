@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308dc4b5a7552a24484d06171293004a, type: 3}
   m_Name: DM_BaseModulator
   m_EditorClassIdentifier: 
-  percentageIncrementPerSeconds: 0.02
+  maxDurationModulation: 60
   minDifficultyAmount: {x: 0, y: 1}

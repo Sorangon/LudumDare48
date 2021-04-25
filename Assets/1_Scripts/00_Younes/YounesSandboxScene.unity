@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 11400000, guid: fe8153635d47e6e42959549944550816, type: 2}
+    - target: {fileID: 1891299057739236873, guid: 20bf61bfbbb9c5345af5d684ac722eb6, type: 3}
+      propertyPath: farCollapseSpeedMinMax.y
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1891299057739236874, guid: 20bf61bfbbb9c5345af5d684ac722eb6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -543,6 +547,14 @@ PrefabInstance:
     - target: {fileID: 3479986125888669149, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
       propertyPath: m_Name
       value: PF_Level Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479986125888669150, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
+      propertyPath: maxChunks
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479986125888669150, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
+      propertyPath: distanceBetweenChunks
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
