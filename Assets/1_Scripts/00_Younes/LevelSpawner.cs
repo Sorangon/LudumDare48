@@ -42,8 +42,6 @@ public class LevelSpawner : MonoBehaviour
         ClearLevel();
         currentLine = 0;
 
-
-
         //Generate all chunks
         for (int lineIndex = 0; lineIndex <= maxLines; lineIndex += distanceBetweenChunks)
         {
