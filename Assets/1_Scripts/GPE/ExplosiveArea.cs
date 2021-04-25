@@ -6,6 +6,7 @@ public class ExplosiveArea : MonoBehaviour {
     #region Settings
     [Min(0f)] public float areaRadius = 1f;
     [Min(0f)] public int damages = 100;
+    public float knockbackForce = 2f;
     public LayerMask targetLayers = new LayerMask();
     public bool destroy = false;
     
@@ -23,6 +24,11 @@ public class ExplosiveArea : MonoBehaviour {
         for (int i = 0; i < cols; i++) {
             if(collisions[i].TryGetHealthSystem(out Health health)) {
                 health.InflictDamages(damages);
+            }
+
+            if(collisions[i].TryGetComponentOnRoot(out CharacterPhysics charaPhys)){
+                Vector2 dir = collisions[i].transform.position - transform.position;
+                charaPhys.AddForce(dir.normalized * knockbackForce, true);
             }
         }
 

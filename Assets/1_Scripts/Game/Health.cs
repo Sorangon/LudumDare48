@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using NaughtyAttributes;
 using UnityEngine.Events;
+using CoreDev.Utility;
 
 /// <summary>
 /// Base health system for game objects
@@ -8,6 +9,7 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour {
     #region Settings
     [SerializeField, Min(0)] private int maxHealth = 100;
+    [SerializeField, Min(0f)] private float recoveryTime = 0f;
     public bool invicible = false;
 
     [Header("Death")]
@@ -19,25 +21,31 @@ public class Health : MonoBehaviour {
     [Foldout("Events")]
     [SerializeField] private UnityEvent onTakeDamages = new UnityEvent();
     [Foldout("Events")]
+    [SerializeField] private UnityEvent onRecover = new UnityEvent();
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent onEndRecover = new UnityEvent();
+    [Foldout("Events")]
     [SerializeField] private UnityEvent onAddMaxHealth = new UnityEvent();
     [Foldout("Events")]
     [SerializeField] private UnityEvent onDie = new UnityEvent();
-
     #endregion
 
     #region Currents
     [ShowNonSerializedField] private int currentHealth = 100;
+    private Timer recoveryTimer = null;
     #endregion
 
     #region Properties
     public int MaxHealth => maxHealth;
     public int CurrentHealth => currentHealth;
     public float CurrentHealthRatio => (float)currentHealth / (float)maxHealth;
+    public bool IsRecovering => recoveryTimer != null && recoveryTimer.isPlaying;
     #endregion
 
     #region Callbacks
     private void Start() {
         currentHealth = maxHealth;
+        recoveryTimer = new Timer(recoveryTime, () => onEndRecover?.Invoke());
     }
     #endregion
 
@@ -56,13 +64,21 @@ public class Health : MonoBehaviour {
     }
 
     public void InflictDamages(int amount) {
-        if (amount < 0 || invicible) {
+        if (amount < 0 || invicible || IsRecovering) {
             return;
         }
 
         currentHealth -= amount;
         if (currentHealth <= 0) {
             Die();
+        }
+
+        if(recoveryTime > 0f) {
+            if (recoveryTimer.isPlaying) {
+                recoveryTimer.Cancel();
+            }
+            recoveryTimer.Play();
+            onRecover?.Invoke();
         }
 
         onTakeDamages?.Invoke();
