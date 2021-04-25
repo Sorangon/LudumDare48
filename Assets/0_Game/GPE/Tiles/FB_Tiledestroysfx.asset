@@ -17,6 +17,6 @@ MonoBehaviour:
   relativeScale: 1
   soundEffect: {fileID: 8300000, guid: 23302c1f9e6a39d47a5f16e12a3a57f1, type: 3}
   pitchRange: {x: 1, y: 2}
-  volumeRange: {x: 0.4, y: 1}
+  volumeRange: {x: 0.5, y: 0.6}
   spatialBlend: 0.5
   resetSound: 0
