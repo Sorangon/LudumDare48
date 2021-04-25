@@ -37,5 +37,9 @@ public class CharacterInput : MonoBehaviour {
         direction = direction.normalized;
         weaponManager.SetAimDir(direction);
     }
+
+    public void AimAction(InputAction.CallbackContext callbackContext) {
+        weaponManager.SetAimDir(callbackContext.ReadValue<Vector2>().normalized);
+    }
     #endregion
 }
