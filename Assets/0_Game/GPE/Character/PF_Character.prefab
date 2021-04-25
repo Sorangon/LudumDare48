@@ -441,12 +441,66 @@ MonoBehaviour:
   invicible: 0
   deathBehaviour: {fileID: 11400000, guid: 1ca48525c48f10d4c8a05cfa6bcc51f8, type: 2}
   deathBehaviourParameter: {fileID: 0}
+  onInitHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 25587e87311b3f9479650a2ffbd61e0b, type: 2}
+        m_TargetAssemblyTypeName: IntVariable, LDJAM.Runtime
+        m_MethodName: SetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onInitMaxHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 63268ee30aafa80478cfcce4b0a996a7, type: 2}
+        m_TargetAssemblyTypeName: IntVariable, LDJAM.Runtime
+        m_MethodName: SetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHeal:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 63268ee30aafa80478cfcce4b0a996a7, type: 2}
+        m_TargetAssemblyTypeName: IntVariable, LDJAM.Runtime
+        m_MethodName: SetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTakeDamages:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 63268ee30aafa80478cfcce4b0a996a7, type: 2}
+        m_TargetAssemblyTypeName: IntVariable, LDJAM.Runtime
+        m_MethodName: SetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onRecover:
     m_PersistentCalls:
       m_Calls: []
@@ -455,10 +509,34 @@ MonoBehaviour:
       m_Calls: []
   onAddMaxHealth:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 25587e87311b3f9479650a2ffbd61e0b, type: 2}
+        m_TargetAssemblyTypeName: IntVariable, LDJAM.Runtime
+        m_MethodName: SetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 63268ee30aafa80478cfcce4b0a996a7, type: 2}
+        m_TargetAssemblyTypeName: IntVariable, LDJAM.Runtime
+        m_MethodName: SetValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7575725198304016740
 GameObject:
   m_ObjectHideFlags: 0
