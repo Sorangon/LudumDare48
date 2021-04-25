@@ -19435,8 +19435,12 @@ PrefabInstance:
       value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 295222649481608471, guid: 52397a61fe2511a41b1c8c831e78fc8b, type: 3}
+      propertyPath: CustomDataModule.vector0_0.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 295222649481608471, guid: 52397a61fe2511a41b1c8c831e78fc8b, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.15
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 295222649481608471, guid: 52397a61fe2511a41b1c8c831e78fc8b, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
