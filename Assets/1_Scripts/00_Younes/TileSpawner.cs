@@ -5,19 +5,17 @@ using NaughtyAttributes;
 
 public class TileSpawner : MonoBehaviour
 {
+    [Header ("References")]
     [SerializeField] GameObject tilePrefab;
     [SerializeField] GameObject wallPrefab;
     [SerializeField] Grid2D grid2D;
-    //[SerializeField] Transform tileHolder;
-
-    [Header("Debug")]
-    public int globalHeight;
 
     [Header("Parameters")]
     public int chunkHeight;
     public bool fillLines = false;
     [Range(0, 100)] public int fillPercent;
     [Range(0, 80)] public int wallPercent;
+    int globalHeight;
 
     [Button]
     public void GenerateTileChunk()
@@ -77,7 +75,7 @@ public class TileSpawner : MonoBehaviour
         int childs = transform.childCount;
         for (int i = 0; i < childs; i++)
 		{
-            if (Application.isEditor)
+            if (!Application.isPlaying)
                 DestroyImmediate(transform.GetChild(0).gameObject);
             else
                 Destroy(transform.GetChild(0).gameObject);
