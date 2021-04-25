@@ -31,15 +31,20 @@ public class LevelSpawner : MonoBehaviour
         GenerateLevel();
     }
 
-    [Button]
+	private void Update()
+	{
+        Debug.Log("Level spawner pos  :" + transform.position);	
+	}
+
+	[Button]
     public void GenerateLevel()
     {
         ComputeDifficulty();
 
-        //Init
+        //Init       
         transform.position = new Vector3(0, 0, 0);
         maxLines = maxChunks * distanceBetweenChunks;
-        ClearLevel();
+        //ClearLevel();
         currentLine = 0;
 
         //Generate all chunks
@@ -54,7 +59,7 @@ public class LevelSpawner : MonoBehaviour
         transform.position = pos;
 
         //Threshold for triggering next Level Generation
-        Vector3 thresholdPos = new Vector3(0, (currentLine) * -1, 0); //Tweak this to get correct value
+        Vector3 thresholdPos = new Vector3(0, (currentLine - distanceBetweenChunks) * -1, 0); //Tweak this to get correct value
         GameObject nextLevelThreshold = Instantiate(nextLevelThresholdPrefab, thresholdPos, Quaternion.identity);
         nextLevelThreshold.name = "Next Level Threshold Prefab";
         nextLevelThreshold.transform.SetParent(this.transform);
@@ -73,7 +78,7 @@ public class LevelSpawner : MonoBehaviour
     void ComputeDifficulty()
     {
         float d = dm.DifficultyAmount; //Between 0 or 1
-        print("Actual difficulty : " + d);
+        //print("Actual difficulty : " + d);
 
         //Lower max chunk per level & Lower space Btw chunks
         if (d < .2) {
