@@ -98,6 +98,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damages: 10
+  onImpact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: cc794dfb467bd2841949f87bf546d659, type: 2}
+        m_TargetAssemblyTypeName: CoreDev.Effects.FeedbackAsset, TopDownR2J.Utility
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2443885555252309126}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7138920757654053778
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,14 +9,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 295222649481608471, guid: 52397a61fe2511a41b1c8c831e78fc8b, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.7
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 295222649481608471, guid: 52397a61fe2511a41b1c8c831e78fc8b, type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 295222649481608471, guid: 52397a61fe2511a41b1c8c831e78fc8b, type: 3}
       propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 295222649481608471, guid: 52397a61fe2511a41b1c8c831e78fc8b, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 295222649481608471, guid: 52397a61fe2511a41b1c8c831e78fc8b, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1001728358589588230, guid: 52397a61fe2511a41b1c8c831e78fc8b, type: 3}
