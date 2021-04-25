@@ -41,9 +41,11 @@ public class GameManager : ScriptableObject {
     }
 
     public void EndGame() {
-        currentSession.Stop();
-        currentSession = null;
-        onEndGame?.Invoke();
+        if(currentSession != null) {
+            currentSession.Stop();
+            currentSession = null;
+            onEndGame?.Invoke();
+        }
     }
     #endregion
 
