@@ -75,6 +75,10 @@ PrefabInstance:
       value: PF_ExplosiveTile
       objectReference: {fileID: 0}
     - target: {fileID: 765573951855421526, guid: 1e05f060030051941a53d85dacfdca6a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2868d601155fd1743973c731e8abf400, type: 3}
+    - target: {fileID: 765573951855421526, guid: 1e05f060030051941a53d85dacfdca6a, type: 3}
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}

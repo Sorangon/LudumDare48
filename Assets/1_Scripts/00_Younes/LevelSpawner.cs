@@ -62,6 +62,7 @@ public class LevelSpawner : MonoBehaviour
         nextLevelThreshold.transform.SetParent(this.transform);
 
         //Next Spawner height
+        //Need to tweak this for some fixes
         spawnerHeight += maxLines;
     }
 
