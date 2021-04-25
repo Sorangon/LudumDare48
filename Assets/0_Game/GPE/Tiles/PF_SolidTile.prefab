@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6334512028207828158}
   - component: {fileID: 6334512028207828153}
   - component: {fileID: 4642162875327516710}
+  - component: {fileID: -3149808959712023185}
   m_Layer: 0
   m_Name: PF_SolidTile
   m_TagString: Untagged
@@ -136,4 +137,57 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -5098404
+  m_InstanceId: 211812
+--- !u!114 &-3149808959712023185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334512028207828155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78447fda0b549d459c4563c40acdd0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  recoveryTime: 0
+  invicible: 1
+  deathBehaviour: {fileID: 0}
+  deathBehaviourParameter: {fileID: 0}
+  onInitHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onInitMaxHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  onTakeDamages:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 11fe5de4cc8b10a4b868e4a085b8d71d, type: 2}
+        m_TargetAssemblyTypeName: CoreDev.Effects.FeedbackAsset, TopDownR2J.Utility
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6334512028207828152}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRecover:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndRecover:
+    m_PersistentCalls:
+      m_Calls: []
+  onAddMaxHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
