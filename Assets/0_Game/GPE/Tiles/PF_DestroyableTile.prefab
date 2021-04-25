@@ -47,12 +47,6 @@ MonoBehaviour:
   onEndRecover:
     m_PersistentCalls:
       m_Calls: []
-  onRecover:
-    m_PersistentCalls:
-      m_Calls: []
-  onEndRecover:
-    m_PersistentCalls:
-      m_Calls: []
   onAddMaxHealth:
     m_PersistentCalls:
       m_Calls: []
