@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SC_StartExplosionBurst
   m_EditorClassIdentifier: 
   duration: 0.2
-  strength: 0.7
+  strength: 1.2
   vibrato: 20
   randomness: 90
   snapping: 0

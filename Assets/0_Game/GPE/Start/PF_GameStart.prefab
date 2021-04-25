@@ -114,6 +114,9 @@ MonoBehaviour:
   onTakeDamages:
     m_PersistentCalls:
       m_Calls: []
+  onAbsorbDamages:
+    m_PersistentCalls:
+      m_Calls: []
   onRecover:
     m_PersistentCalls:
       m_Calls: []
