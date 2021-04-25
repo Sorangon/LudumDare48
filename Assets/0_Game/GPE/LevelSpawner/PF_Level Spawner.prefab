@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3479986125888669120}
   - component: {fileID: 3479986125888669150}
   m_Layer: 0
-  m_Name: Level Spawner
+  m_Name: PF_Level Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 100
-  width: 100
+  width: 20
 --- !u!114 &3479986125888669120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,11 +62,11 @@ MonoBehaviour:
   tilePrefab: {fileID: 765573951855421523, guid: 1e05f060030051941a53d85dacfdca6a, type: 3}
   wallPrefab: {fileID: 6334512028207828155, guid: 232607645da9af64badf044370f8877b, type: 3}
   grid2D: {fileID: 3479986125888669151}
-  globalHeight: 400
-  chunkHeight: 3
+  dm: {fileID: 11400000, guid: dae37efe04b544a40bba675f462972b6, type: 2}
+  chunkHeight: 2
   fillLines: 0
-  fillPercent: 63
-  wallPercent: 43
+  fillPercent: 51
+  wallPercent: 18
 --- !u!114 &3479986125888669150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +81,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 3479986125888669151}
   ts: {fileID: 3479986125888669120}
-  currentLine: 400
-  maxChunks: 20
+  nextLevelThresholdPrefab: {fileID: 6261249444486052163, guid: ad06a10128e362a4680d7709d7f6ed2a, type: 3}
+  dm: {fileID: 11400000, guid: dae37efe04b544a40bba675f462972b6, type: 2}
+  spawnerHeight: 300
+  currentLine: 300
+  maxChunks: 5
   distanceBetweenChunks: 5
+  firstChunks: 1

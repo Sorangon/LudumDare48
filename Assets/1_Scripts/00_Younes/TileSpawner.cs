@@ -9,6 +9,7 @@ public class TileSpawner : MonoBehaviour
     [SerializeField] GameObject tilePrefab;
     [SerializeField] GameObject wallPrefab;
     [SerializeField] Grid2D grid2D;
+    [SerializeField] DifficultyModulator dm;
 
     [Header("Parameters")]
     public int chunkHeight;
@@ -24,7 +25,12 @@ public class TileSpawner : MonoBehaviour
         GameObject holder = new GameObject();
         holder.transform.SetParent(this.transform);
 
-        globalHeight= ls.currentLine;
+        //Difficulty update
+            //Fill pct++
+            //Wall pct++
+            //Chunk height ++
+
+        globalHeight = ls.currentLine;
         holder.name = "Chunk " + (globalHeight / ls.distanceBetweenChunks);
 
         for (int n = 0; n < chunkHeight; n++)

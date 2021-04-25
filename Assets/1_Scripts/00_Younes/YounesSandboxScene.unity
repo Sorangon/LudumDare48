@@ -489,20 +489,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3479986125888669120, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
-      propertyPath: chunkHeight
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3479986125888669120, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
       propertyPath: fillPercent
-      value: 51
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3479986125888669120, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
       propertyPath: wallPercent
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 3479986125888669120, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
-      propertyPath: globalHeight
-      value: 100
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3479986125888669124, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
       propertyPath: m_RootOrder
@@ -551,34 +543,6 @@ PrefabInstance:
     - target: {fileID: 3479986125888669149, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
       propertyPath: m_Name
       value: PF_Level Spawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 3479986125888669150, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
-      propertyPath: maxChunks
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3479986125888669150, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
-      propertyPath: currentLine
-      value: 275
-      objectReference: {fileID: 0}
-    - target: {fileID: 3479986125888669150, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
-      propertyPath: spawnerHeight
-      value: 275
-      objectReference: {fileID: 0}
-    - target: {fileID: 3479986125888669150, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
-      propertyPath: nextLevelThreshold
-      value: 
-      objectReference: {fileID: 6261249444486052163, guid: ad06a10128e362a4680d7709d7f6ed2a, type: 3}
-    - target: {fileID: 3479986125888669150, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
-      propertyPath: distanceBetweenChunks
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3479986125888669150, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
-      propertyPath: nextLevelThresholdPrefab
-      value: 
-      objectReference: {fileID: 6261249444486052163, guid: ad06a10128e362a4680d7709d7f6ed2a, type: 3}
-    - target: {fileID: 3479986125888669151, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
-      propertyPath: width
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 303ca65faa20e0c44b28b2ac85dc0d6e, type: 3}
