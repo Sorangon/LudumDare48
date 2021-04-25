@@ -60,7 +60,6 @@ GameObject:
   - component: {fileID: 4757359133310242726}
   - component: {fileID: 7671110722025926850}
   - component: {fileID: 2100661696195426131}
-  - component: {fileID: 38048893314587320}
   m_Layer: 0
   m_Name: Cam
   m_TagString: Untagged
@@ -170,11 +169,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 4757359133310242726}
---- !u!81 &38048893314587320
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864370467690478576}
-  m_Enabled: 1
