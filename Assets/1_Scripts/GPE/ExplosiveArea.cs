@@ -1,6 +1,8 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ExplosiveArea : MonoBehaviour {
     #region Settings
@@ -9,7 +11,13 @@ public class ExplosiveArea : MonoBehaviour {
     public float knockbackForce = 2f;
     public LayerMask targetLayers = new LayerMask();
     public bool destroy = false;
-    
+
+    [Foldout("Events")]
+    public FloatEvent onExplode;
+    #endregion
+
+    #region Classes
+    [System.Serializable] public class FloatEvent : UnityEvent<float> { }
     #endregion
 
     #region Currents
@@ -31,6 +39,8 @@ public class ExplosiveArea : MonoBehaviour {
                 charaPhys.AddForce(dir.normalized * knockbackForce, true);
             }
         }
+
+        onExplode?.Invoke(areaRadius);
 
         if (destroy) {
             Destroy(gameObject);
