@@ -1,6 +1,8 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CharacterPhysics)), SelectionBase]
 public class CharacterController2D : MonoBehaviour {
@@ -23,6 +25,9 @@ public class CharacterController2D : MonoBehaviour {
 
     [Header("References")]
     public CharacterPhysics characterPhysics = null;
+
+    [Foldout("Events")]
+    public UnityEvent onJump = new UnityEvent();
     #endregion
 
     #region Currents
@@ -51,10 +56,10 @@ public class CharacterController2D : MonoBehaviour {
 
         if (requestJump) {
             if (IsGrounded()) {
-                characterPhysics.AddForce(Vector2.up * jumpForce, true);
+                Jump(jumpForce);
             } else {
                 if(remaningAirJumpCount > 0) {
-                    characterPhysics.AddForce(Vector2.up * airJumpForce, true);
+                    Jump(airJumpForce);
                     remaningAirJumpCount--;
                 }
             }
@@ -93,8 +98,13 @@ public class CharacterController2D : MonoBehaviour {
     #endregion
 
     #region Actions
-    public void Jump() {
+    public void RequestJump() {
         requestJump = true;
+    }
+
+    private void Jump(float force) {
+        characterPhysics.AddForce(Vector2.up * force, true);
+        onJump?.Invoke();
     }
     #endregion
 
