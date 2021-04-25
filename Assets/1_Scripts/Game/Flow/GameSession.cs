@@ -20,7 +20,7 @@ public class GameSession {
 
     #region Callbacks
     public void Start() {
-        ResetAll();
+        difficultyModulator.Reinitialize();
     }
 
     public void Stop() {
