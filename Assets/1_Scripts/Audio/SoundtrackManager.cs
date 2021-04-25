@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SoundtrackManager : MonoBehaviour {
     #region Settings
@@ -47,7 +48,7 @@ public class SoundtrackManager : MonoBehaviour {
 
         await Task.Delay(Mathf.RoundToInt(startGameJingle.length * 1000f));
 
-        if (!isGameOver) {
+        if (!isGameOver && Application.isPlaying) {
             PlayClip(gameSoundtrack);
         }
     }

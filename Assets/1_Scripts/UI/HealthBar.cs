@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     #region Settings
-    [Header("Graphics")]
-    public Gradient colorOverLife = new Gradient();
 
     [Header("Variables")]
     public IntVariable playerHealthVariable = null;
@@ -31,17 +29,9 @@ public class HealthBar : MonoBehaviour
 
     private void OnUpdateHealth() {
         slider.value = playerHealthVariable.GetValue();
-        UpdateColor();
     }
     private void OnUpdateMaxHealth() {
         slider.maxValue = playerMaxHealthVariable.GetValue();
-        UpdateColor();
-    }
-    #endregion
-
-    #region Color
-    private void UpdateColor() {
-        fillImage.color = colorOverLife.Evaluate((float)playerHealthVariable.GetValue() / (float)playerMaxHealthVariable.GetValue());
     }
     #endregion
 }
