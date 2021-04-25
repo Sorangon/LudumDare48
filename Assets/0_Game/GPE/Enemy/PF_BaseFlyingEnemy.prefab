@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damages: 50
   areaRadius: 0.7
-  knockbackForce: 12
+  knockbackForce: 10
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -110,6 +110,12 @@ MonoBehaviour:
   invicible: 0
   deathBehaviour: {fileID: 0}
   deathBehaviourParameter: {fileID: 0}
+  onInitHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onInitMaxHealth:
+    m_PersistentCalls:
+      m_Calls: []
   onHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -127,7 +133,31 @@ MonoBehaviour:
       m_Calls: []
   onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: e5ee021c9adf75d4ba3cdd2b793f05aa, type: 2}
+        m_TargetAssemblyTypeName: ScoreManager, LDJAM.Runtime
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: ffa70d09013fccc41a96f12e260eb867, type: 2}
+        m_TargetAssemblyTypeName: CameraShake, LDJAM.Runtime
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2379304671694508828
 GameObject:
   m_ObjectHideFlags: 0

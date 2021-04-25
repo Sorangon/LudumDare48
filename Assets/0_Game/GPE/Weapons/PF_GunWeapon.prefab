@@ -158,6 +158,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5be5c71b60bb8e40abc6dd6a1c5c91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootRate: 0.05
+  shootRate: 0.07
+  spead: 20
+  bullets: 3
   projectile: {fileID: 9169460667203189359, guid: c9a3f56e32d6cbc448a69dad78422a0c, type: 3}
   muzzlePos: {fileID: 4586100312546676526}
+  onShoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 95653c4d576f6bb4ea1a32ceb8adafb1, type: 2}
+        m_TargetAssemblyTypeName: CameraShake, LDJAM.Runtime
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

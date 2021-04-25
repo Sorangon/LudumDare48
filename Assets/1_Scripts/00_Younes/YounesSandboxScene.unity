@@ -2041,33 +2041,9 @@ PrefabInstance:
       value: PF_GameStart
       objectReference: {fileID: 0}
     - target: {fileID: 1897435305384764685, guid: 85a0877ba70a09546a7074abda27ae7e, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1897435305384764685, guid: 85a0877ba70a09546a7074abda27ae7e, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1897435305384764685, guid: 85a0877ba70a09546a7074abda27ae7e, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 811399025}
-    - target: {fileID: 1897435305384764685, guid: 85a0877ba70a09546a7074abda27ae7e, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1897435305384764685, guid: 85a0877ba70a09546a7074abda27ae7e, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Execute
-      objectReference: {fileID: 0}
-    - target: {fileID: 1897435305384764685, guid: 85a0877ba70a09546a7074abda27ae7e, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Destroy, LDJAM.Runtime
-      objectReference: {fileID: 0}
-    - target: {fileID: 1897435305384764685, guid: 85a0877ba70a09546a7074abda27ae7e, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1897435305384764687, guid: 85a0877ba70a09546a7074abda27ae7e, type: 3}
       propertyPath: m_RootOrder
       value: 4

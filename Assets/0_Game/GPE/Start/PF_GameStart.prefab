@@ -98,13 +98,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  recoveryTime: 0
   invicible: 0
   deathBehaviour: {fileID: 0}
   deathBehaviourParameter: {fileID: 0}
+  onInitHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onInitMaxHealth:
+    m_PersistentCalls:
+      m_Calls: []
   onHeal:
     m_PersistentCalls:
       m_Calls: []
   onTakeDamages:
+    m_PersistentCalls:
+      m_Calls: []
+  onRecover:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndRecover:
     m_PersistentCalls:
       m_Calls: []
   onAddMaxHealth:
@@ -116,6 +129,42 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: fe8153635d47e6e42959549944550816, type: 2}
         m_TargetAssemblyTypeName: GameManager, LDJAM.Runtime
         m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Destroy, LDJAM.Runtime
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: ee2a80b6332c0354a9ce7d5948439f7c, type: 2}
+        m_TargetAssemblyTypeName: CameraShake, LDJAM.Runtime
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 7bd016fc529ad3f4eb3a8a563b9788f8, type: 2}
+        m_TargetAssemblyTypeName: CameraShake, LDJAM.Runtime
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
