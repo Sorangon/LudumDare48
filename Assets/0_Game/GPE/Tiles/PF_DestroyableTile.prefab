@@ -80,6 +80,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 1f4d35f18bcae374b976e7544ee5874f, type: 2}
+        m_TargetAssemblyTypeName: CollectibleSpawner, LDJAM.Runtime
+        m_MethodName: CreateCollectible
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 765573951855421520}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3492464166259129112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +180,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4642162875327516710, guid: 232607645da9af64badf044370f8877b, type: 3}
       propertyPath: m_InstanceId
-      value: -245222
+      value: -277152
       objectReference: {fileID: 0}
     - target: {fileID: 6334512028207828152, guid: 232607645da9af64badf044370f8877b, type: 3}
       propertyPath: m_RootOrder
