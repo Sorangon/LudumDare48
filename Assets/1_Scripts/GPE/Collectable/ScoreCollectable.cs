@@ -7,9 +7,9 @@ public class ScoreCollectable : Collectable {
     #endregion
 
     #region Collectable Callback
-    protected override void OnCollect() {
+    protected override void OnCollect(CharacterController2D character) {
         scoreManager.AddPoints(points);
-        base.OnCollect();
+        base.OnCollect(character);
     } 
     #endregion
 }
