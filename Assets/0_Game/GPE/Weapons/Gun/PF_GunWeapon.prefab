@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pitchRange: {x: 1, y: 0.95}
-  volumeRange: {x: 0.19, y: 0.195}
+  volumeRange: {x: 0.26967213, y: 0.37704918}
   source: {fileID: 8321250787578119621}
 --- !u!1001 &3886785659867678521
 PrefabInstance:
