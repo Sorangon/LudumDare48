@@ -578,6 +578,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onLand:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7266342410427268881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,7 +859,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.9, y: 1.6}
+  m_Size: {x: 0.75, y: 1.6}
   m_Direction: 0
 --- !u!1001 &3849667423505677872
 PrefabInstance:
@@ -950,6 +953,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6522237864744166260}
     m_Modifications:
+    - target: {fileID: 5088642269210071079, guid: ba27303cc1a94a84d9e08afdf3b38ff6, type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 8251496915035333541}
     - target: {fileID: 8963855899195620453, guid: ba27303cc1a94a84d9e08afdf3b38ff6, type: 3}
       propertyPath: m_Name
       value: RIG_Chara
@@ -960,7 +967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9213547678806296448, guid: ba27303cc1a94a84d9e08afdf3b38ff6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 0.118
       objectReference: {fileID: 0}
     - target: {fileID: 9213547678806296448, guid: ba27303cc1a94a84d9e08afdf3b38ff6, type: 3}
       propertyPath: m_LocalPosition.y
