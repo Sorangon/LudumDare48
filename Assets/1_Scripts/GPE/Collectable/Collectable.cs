@@ -9,7 +9,7 @@ public class Collectable : MonoBehaviour {
     #endregion
 
     #region Collectable Callbacks
-    protected virtual void OnCollect() {
+    protected virtual void OnCollect(CharacterController2D character) {
         onCollect?.Invoke();
         Destroy(gameObject);
     }
@@ -18,7 +18,7 @@ public class Collectable : MonoBehaviour {
     #region Physic Callbacks
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.TryGetComponentOnRoot(out CharacterController2D chara)) {
-            OnCollect();
+            OnCollect(chara);
         }
     }
     #endregion
