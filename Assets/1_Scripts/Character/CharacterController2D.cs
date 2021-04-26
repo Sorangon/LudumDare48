@@ -28,6 +28,7 @@ public class CharacterController2D : MonoBehaviour {
 
     [Foldout("Events")]
     public UnityEvent onJump = new UnityEvent();
+    public UnityEvent onLand = new UnityEvent();
     #endregion
 
     #region Currents
@@ -38,15 +39,20 @@ public class CharacterController2D : MonoBehaviour {
     private bool requestJump = false;
     #endregion
 
+    #region Properties
+    public float CurrentSpeed => currentHorizontalMovement;
+    #endregion
+
     #region Callbacks
     private void FixedUpdate() {
         ManageHorizontalMovements();
 
         float groundAngle = (characterPhysics.GetContactsResistance(Vector2.down)) * 90f;
         if (groundAngle > isGroundedAngleThreshold) {
-            isGroundedTimer = leaveGroundDelay;
-            if(remaningAirJumpCount < airJumpsCount) {
+            if(isGroundedTimer <= 0f) {
+                isGroundedTimer = leaveGroundDelay;
                 remaningAirJumpCount = airJumpsCount;
+                onLand?.Invoke();
             }
         } else {
             if(isGroundedTimer > 0f) {
