@@ -28,6 +28,7 @@ public class CharacterController2D : MonoBehaviour {
 
     [Foldout("Events")]
     public UnityEvent onJump = new UnityEvent();
+    [Foldout("Events")]
     public UnityEvent onLand = new UnityEvent();
     #endregion
 

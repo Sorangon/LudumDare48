@@ -12,10 +12,6 @@ public class CharacterAnimation : MonoBehaviour {
     private int jumpProp = Animator.StringToHash("Jump");
     #endregion
 
-    private void OnEnable() {
-        characterController.onJump.AddListener(OnJump);
-        characterController.onLand.AddListener(OnLand);
-    }
 
     private void Update() {
         float speed = characterController.CurrentSpeed;
@@ -26,16 +22,11 @@ public class CharacterAnimation : MonoBehaviour {
         animator.SetFloat(speedProp, absSpeed);   
     }
 
-    private void OnDisable() {
-        characterController.onJump.RemoveListener(OnJump);
-        characterController.onLand.RemoveListener(OnLand);
-    }
-
-    private void OnJump() {
+    public void OnJump() {
         animator.SetBool(isJumpingProp, true);
     }
 
-    private void OnLand() {
+    public void OnLand() {
         animator.SetBool(isJumpingProp, false);
     }
 }
