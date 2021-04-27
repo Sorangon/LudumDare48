@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,6 +17,7 @@ public class SoundtrackManager : MonoBehaviour {
     #endregion
 
     #region Currents
+    private IEnumerator startGameCoroutine = null;
     private bool isGameOver = false;
     #endregion
 
@@ -41,21 +43,28 @@ public class SoundtrackManager : MonoBehaviour {
     private void OnEndGame() {
         PlayClip(gameOverSoundtrack);
         isGameOver = true;
+        if (startGameCoroutine != null) {
+            StopCoroutine(startGameCoroutine);
+        }
     }
 
-    private async void OnStartGame() {
+    private void OnStartGame() {
+        isGameOver = false;
+        startGameCoroutine = OnStartGameCoroutine();
+        StartCoroutine(startGameCoroutine);
+    }
+
+    private IEnumerator OnStartGameCoroutine() {
         PlayClip(startGameJingle);
-
-        await Task.Delay(Mathf.RoundToInt(startGameJingle.length * 1000f));
-
-        if (!isGameOver && Application.isPlaying) {
+        yield return new WaitForSecondsRealtime(startGameJingle.length);
+        if (!isGameOver) {
             PlayClip(gameSoundtrack);
         }
+        yield break;
     }
 
     private void OnResetGameState() {
         PlayClip(hubSoundtrack);
-        isGameOver = false;
     }
 
     private void PlayClip(AudioClip clip) {

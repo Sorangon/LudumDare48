@@ -57,6 +57,7 @@ public class EndMenu : MonoBehaviour {
     private IEnumerator DisplayEndMenuCoroutine() {
         yield return new WaitForSeconds(endMenuDisplayDelay);
         endMenuPanel.SetActive(true);
+        yield return new WaitForSeconds(1f);
         isDisplayingMenu = true;
     }
 
